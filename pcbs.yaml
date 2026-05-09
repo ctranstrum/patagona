@@ -1,0 +1,291 @@
+pcbs:
+  gigas:
+    template: kicad8
+    outlines:
+      main:
+        outline: pcb_outline
+    params:
+      name: *keyboard_name
+      paper: A4
+
+    footprints:
+      hotswap_sockets:
+        what: choc-v1-v2
+        where: [opt_switch, switch]
+        params:
+          from: "{{cpsrc}}"
+          to: "{{colrow}}"
+          include_keycap: true
+          include_corner_marks: true
+
+      charlieplex_map:
+        what: text
+        where: [opt_switch, switch]
+        adjust:
+          shift: [-3/5 hdx, hdy / 3]
+          resist: true
+        params:
+          side: B
+          text: "{{cpsrc}}-{{cpdst}}"
+
+      diodes:
+        what: sod123
+        where: [opt_switch, switch]
+        adjust:
+          shift: [0, -4]
+          resist: true
+        params:
+          side: B
+          designator: SW
+          from: "{{colrow}}"
+          to: "D_{{cpdst}}"
+          smd: true
+          via: pad
+          labels: true
+
+      dpad_charlieplex:
+        what: text
+        where: dpad
+        adjust.shift: [0, hdy]
+        params:
+          side: B
+          text: "{{cpsrc}}-{{cpdst}}"
+
+      dpad_diode:
+        what: sod123
+        where: dpad
+        adjust:
+          shift: [0, 14]
+        params:
+          side: B
+          designator: SW
+          from: encdiode
+          to: "D_{{cpdst}}"
+          smd: true
+          via: pad
+          labels: true
+
+      return_diodes:
+        what: sod123
+        where: return
+        adjust.shift: [0, -0.4 dy]
+        params:
+          side: B
+          designator: D
+          from: "D_{{cpdst}}"
+          to: "{{cpdst}}"
+          smd: true
+          via: pad
+          labels: true
+
+      interrupt_diodes:
+        what: sod123
+        where: return
+        adjust.shift: [0, -0.55 dy]
+        params:
+          side: B
+          designator: I
+          from: "D_{{cpdst}}"
+          to: CP_INT
+          smd: true
+          via: pad
+          labels: true
+
+      dpad:
+        what: skrh
+        where: dpad
+        params:
+          include_momentary_switch_pads: true
+          include_plate_hole_marking: true
+          include_silkscreen: true
+          S1: "{{cpsrc}}"
+          S2: encdiode
+
+      xiao_mcu:
+        what: xiao
+        where: mcu
+        params:
+          side: B
+          orientation: down
+          VUSB: none
+          VCC: none
+          P0: CP0
+          P1: CP1
+          P2: CP2
+          P3: CP3
+          P4: CP4
+          P5: CP5
+          P6: CP6
+          P7: CP_INT
+          P8: ENC_B
+          P9: ENC_A
+          P10: none
+
+      xiao_note:
+        what: text
+        where: mcu
+        adjust.shift: [0, -12]
+        params:
+          side: B
+          text: XIAO BLE FACE DOWN
+
+      xiao_bat_pos:
+        what: pad
+        where: xiao_pos_pad
+        params:
+          text_side: B
+          net: BAT+
+          text: BAT+
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      xiao_reset:
+        what: pad
+        where: reset_pad
+        params:
+          text_side: B
+          net: RST
+          text: RST
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      nfc_pads:
+        what: pad
+        where: nfc_pad
+        params:
+          text_side: B
+          net: "{{col}}"
+          text: "{{col}}"
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      battery_jst:
+        what: jst-ph-2
+        where: jst
+        params:
+          BAT_P: RAW
+          BAT_N: GND
+
+      reset_button:
+        what: reset-smd-top
+        where: reset
+        params:
+          side: B
+          from: GND
+          to: RST
+
+      reset_note:
+        what: text
+        where: reset
+        adjust:
+          shift: [-9, 0]
+        params:
+          side: B
+          text: RESET
+          justify: left
+
+      power_slider:
+        what: trislider
+        where: power
+        params:
+          side: B
+          posts: true
+          vias: true
+          COM: RAW
+          A: BAT+
+
+      power_label:
+        what: text
+        where: power
+        adjust.shift: [-4.5, 0.6]
+        params:
+          side: B
+          text: POWER
+          justify: right
+
+      power_on:
+        what: text
+        where: power
+        adjust.shift: [-4.5, -0.8]
+        params:
+          side: B
+          text: ON
+          justify: right
+
+      power_off:
+        what: text
+        where: power
+        adjust.shift: [4.5, 0.6]
+        params:
+          side: B
+          text: OFF
+          justify: left
+
+      mounting_holes:
+        what: mountinghole
+        where: screw
+
+      board_logo:
+        what: mushroom
+        where: dpad
+        adjust.shift: [1, 6]
+        params:
+          side: F
+
+      keyboard_name:
+        what: text
+        where: matrix_pinky_bottom
+        adjust.shift: [dx - 4.5, -0.85 hdy]
+        params:
+          side: F
+          text: *keyboard_name
+          layer: Cu
+          size: 3
+          thickness: 0.5
+          justify: left
+
+      board_version:
+        what: text
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -hdy]
+        params:
+          text: *version
+          side: F
+
+      board_repo:
+        what: text
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -0.65 dy]
+        params:
+          side: F
+          text: *repo
+
+      license_note:
+        what: text
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [dx, -hdy]
+        params:
+          side: F
+          text: *license
+          justify: right
+
+      license_logo:
+        what: oshw
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [1.65 dx, -0.1 dy]
+        params:
+          side: F
+
+      order_number:
+        what: text
+        where: dpad
+        adjust.shift: [0, hdy - 2.75]
+        params:
+          side: F
+          text: *order_text
