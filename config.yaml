@@ -9,7 +9,6 @@ meta:
   # order_num_template: &order_text JLCJLCJLCJLC # for ordering from JLCpcb.com
   # order_num_template: &order_text WayWayWay    # for ordering from PCBway.com
   order_num_template: &order_text "" # remove the order number text completely
-
 units:
   dx: u
   dy: u
@@ -23,7 +22,6 @@ units:
   battery_cover_height: 7
 
   mirrored_distance: 1.75 dx
-
 points:
   zones:
     matrix:
@@ -44,7 +42,6 @@ points:
           rows:
             bottom:
               row: D5
-              # bind: [0, 45, 0, 0]
               tags: [switch, low_bumper]
             home:
               row: D4
@@ -53,7 +50,6 @@ points:
               shift: [3, 3]
               row: D3
               tags: [switch, high_bumper]
-              bind: [0, 4]
         ring:
           key:
             stagger: 2/3 dx
@@ -68,7 +64,6 @@ points:
               row: D7
             top:
               row: D6
-              bind: [1, 0]
         middle:
           key:
             stagger: hdx
@@ -84,7 +79,6 @@ points:
             top:
               row: D3
               tags: [switch, mid_bumper]
-              bind: [0, 1]
         index:
           key:
             stagger: -hdx
@@ -117,8 +111,6 @@ points:
       anchor:
         ref: matrix_inner_bottom
         shift: [0, -dy - 3]
-      key:
-        bind: [15, 0, 0, 0]
       columns:
         inner.rows.spot:
           splay: -15
@@ -138,9 +130,12 @@ points:
         shift: [0, 1.05 dy]
       key:
         tags: [dpad]
-        col: NFC2
-        cpdst: CP1
-        bind: [25, 4.3, 0, 4.3]
+        com: NFC2
+        a: CP1
+        b:
+        c:
+        d:
+        push:
 
     mcu:
       key.tags: [mcu]
@@ -201,7 +196,7 @@ points:
       key.tags: [screw]
       anchor:
         ref: matrix_pinky_home
-        shift: [-2, hdy + 1.6]
+        shift: [-3, hdy + 1.6]
       mirror:
         ref: matrix_inner_home
         distance: mirrored_distance
@@ -210,12 +205,13 @@ points:
       key.tags: [screw]
       anchor:
         ref: matrix_pinky_bottom
-        shift: [0, -hdy]
+        shift: [hdx - 0.5, hdy]
+        rotate: 25
       mirror:
         ref: matrix_inner_home
         distance: mirrored_distance
 
-    pinky_high_screw:
+    ring_high_screw:
       key.tags: [screw]
       anchor:
         ref: matrix_ring_top
@@ -288,7 +284,6 @@ points:
         ref: reset
         shift: [7, 0]
         rotate: -90
-
 outlines:
   _central_bridge:
     - what: rectangle
@@ -681,19 +676,41 @@ outlines:
     - -_keycaps
     - -_xiao_light_guide
 
-  _dpad_plate_cutout:
+  _dpad_outline:
     - what: rectangle
-      where: dpad
-      size: [12.4, 13.2]
-    - what: rectangle
-      where: dpad
-      size: [6.1, 1.2]
-      adjust.shift: [0, -7.2]
+      size: 7.5
+      corner: 1.25
 
-  _dpad_plate_cutout_expanded:
+  _dpad_pre_visualizer:
+    - _dpad_outline
+    - what: rectangle
+      size: 8.7
+      adjust.rotate: 45
+      operation: intersect
+    - what: rectangle
+      size: 1
+      adjust:
+        shift: [0, 3.75]
+        rotate: 45
+      operation: subtract
+    - what: rectangle
+      size: 1.95
+      adjust.rotate: 45
+      operation: subtract
+      corner: 0.5
+
+  _dpad_visualizer:
     - what: outline
-      name: _dpad_plate_cutout
-      expand: 1
+      where: dpad
+      name: _dpad_pre_visualizer
+      adjust.rotate: -45
+
+  _dpad_plate_cutout:
+    - what: outline
+      where: dpad
+      name: _dpad_outline
+      expand: 0.15
+      adjust.rotate: -45
 
   _diode:
     - what: rectangle
@@ -1059,7 +1076,7 @@ outlines:
     - -_xiao_light_guide
     - -_screw_shaft
     - ^_switches_clip_cutout
-    - ^_dpad_plate_cutout_expanded
+    - ^_dpad_plate_cutout
     - ^_battery_cutout
     - ^_jst_cutout
     - ^_xiao_usb_cutout
@@ -1167,6 +1184,9 @@ outlines:
     - board_outline
     - ^_xiao_cutout
     - ^_switches_plate_cutout
+    - ^_switches_swap_tool
+    - ^_optional_left_swap_tool
+    - ^_optional_right_swap_tool
     - ^_optional_left_switch_cutout
     - ^_optional_right_switch_cutout
     - ^_switches_clip_cutout
@@ -1183,9 +1203,10 @@ outlines:
     - ^_reset_cutout
     - ^_jst_pcb_holes
     - ^_battery_cutout
-    - ^battery_cover_outline
+    - ^_battery_cover_outline_1
     - ^_jst_cutout
     - ^_pad_cutout
+    - ^_dpad_visualizer
     - ^_hex_nuts
     - ^_screw_shaft
     - ^_all_bumpers
@@ -1198,6 +1219,9 @@ outlines:
     - rectangle_case_outline
     - ^_xiao_cutout
     - ^_switches_plate_cutout
+    - ^_switches_swap_tool
+    - ^_optional_left_swap_tool
+    - ^_optional_right_swap_tool
     - ^_optional_left_switch_cutout
     - ^_optional_right_switch_cutout
     - ^_switches_clip_cutout
@@ -1214,10 +1238,11 @@ outlines:
     - ^_reset_cutout
     - ^_jst_pcb_holes
     - ^_battery_cutout
-    - ^battery_cover_outline
+    - ^_battery_cover_outline_1
     - ^_jst_cutout
     - ^_pad_cutout
-    - ^_hex_nuts
+    - ^_dpad_visualizer
+    - ^_rect_hex_nuts
     - ^_screw_shaft
     - ^_rect_bumpers
     - ^_diodes
@@ -1313,3 +1338,800 @@ outlines:
     - -dovetail
     - ^_left_half
     - ^_right_half
+cases:
+  _countersunk_screw:
+    - what: outline
+      name: _countersink1
+      extrude: 0.2
+    - what: outline
+      name: _countersink2
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _countersink3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _countersink4
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _countersink5
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _screw_shaft
+      extrude: bottom_case_height - 1
+      shift: [0, 0, 1]
+
+  _rect_countersunk_screw:
+    - what: outline
+      name: _rect_countersink1
+      extrude: 0.2
+    - what: outline
+      name: _rect_countersink2
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rect_countersink3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rect_countersink4
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _rect_countersink5
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _rect_screw_shaft
+      extrude: bottom_case_height - 1
+      shift: [0, 0, 1]
+
+  _reset_bottom_cutout:
+    - what: outline
+      name: _reset_cutout
+      extrude: 1.2
+      shift: [0, 0, bottom_case_height - 1.2]
+    - what: outline
+      name: _reset_button_cutout_large
+      extrude: 0.2
+    - what: outline
+      name: _reset_button_cutout_medium
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _reset_button_cutout_small
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _reset_button_cutout_smallest
+      extrude: bottom_case_height - 1.8
+      shift: [0, 0, 0.6]
+
+  _bottom_cutouts:
+    - what: outline
+      name: _socket_cutout
+      extrude: 2
+      shift: [0, 0, bottom_case_height - 2]
+    - what: outline
+      name: _switch_holes_placed
+      extrude: 1.8
+      shift: [0, 0, bottom_case_height - 1.8]
+    - what: outline
+      name: _diodes_cutout
+      extrude: 1.4
+      shift: [0, 0, bottom_case_height - 1.4]
+    - what: outline
+      name: _return_diodes_cutout
+      extrude: 1.2
+      shift: [0, 0, bottom_case_height - 1.2]
+    - what: outline
+      name: _xiao_bottom_cutout
+      extrude: 2.5
+      shift: [0, 0, bottom_case_height - 2.5]
+    - what: outline
+      name: _xiao_cutout_wall
+      extrude: 1.2
+      shift: [0, 0, bottom_case_height - 1.2]
+    - what: outline
+      name: _xiao_cutout_solder
+      extrude: 0.5
+      shift: [0, 0, 1.5]
+    - _reset_bottom_cutout
+
+  _wireless_bottom_cutouts:
+    - what: outline
+      name: _power_cutout
+      extrude: 1.6
+      shift: [0, 0, bottom_case_height - 1.6]
+    - what: outline
+      name: _jst_tht_cutout
+      extrude: 1.6
+      shift: [0, 0, bottom_case_height - 1.6]
+
+  rectangle_bottom_case:
+    - what: outline
+      name: _rectangle_snap8
+      extrude: 0.1
+    - what: outline
+      name: _rectangle_snap7
+      extrude: 0.1
+      shift: [0, 0, 0.1]
+    - what: outline
+      name: _rectangle_snap6
+      extrude: 0.1
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rectangle_snap5
+      extrude: 0.1
+      shift: [0, 0, 0.3]
+    - what: outline
+      name: _rectangle_snap4
+      extrude: bottom_case_height - 0.4
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rect_bumpers
+      extrude: 1
+      operation: subtract
+    - -_bottom_cutouts
+    - -_rect_countersunk_screw
+    - -_wireless_bottom_cutouts
+
+  wired_bottom_case:
+    - what: outline
+      name: board_outline
+      extrude: bottom_case_height
+    - what: outline
+      name: _all_bumpers
+      extrude: 1
+      operation: subtract
+    - -_bottom_cutouts
+    - -_countersunk_screw
+
+  bottom_case:
+    - wired_bottom_case
+    - -_wireless_bottom_cutouts
+
+  _top_cutouts:
+    - what: outline
+      name: _xiao_light_guide
+      extrude: top_case_height
+    - what: outline
+      name: _switches_plate_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _dpad_plate_cutout
+      extrude: 1.2
+    - what: outline
+      name: _switches_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _switches_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+    - what: outline
+      name: _xiao_usb_cutout
+      extrude: 1.7
+    - what: outline
+      name: _xiao_chip
+      extrude: 0.2
+    - what: outline
+      name: _pad_cutout
+      extrude: 1
+
+  _wired_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _hex_nuts_wired
+      extrude: 1.8
+
+  _wireless_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _hex_nuts
+      extrude: 1.8
+    - what: outline
+      name: _top_heat_set_passage
+      extrude: top_case_height
+    - what: outline
+      name: _jst_cutout
+      extrude: top_case_height
+
+  _rect_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _rect_hex_nuts
+      extrude: 1.8
+    - what: outline
+      name: _top_heat_set_passage
+      extrude: top_case_height
+    - what: outline
+      name: _jst_cutout
+      extrude: top_case_height
+
+  _top_left_cutouts:
+    - what: outline
+      name: _optional_left_switch_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _optional_left_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _optional_left_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+
+  _top_right_cutouts:
+    - what: outline
+      name: _optional_right_switch_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _optional_right_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _optional_right_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+
+  top_case_one_up_chuck:
+    - what: outline
+      name: board_outline
+      extrude: top_case_height
+    - -_wireless_top_cutouts
+
+  top_case_chucker_by_the_dozen:
+    - top_case_one_up_chuck
+    - -_top_right_cutouts
+
+  top_case_twentyone_chuck_street:
+    - top_case_one_up_chuck
+    - -_top_left_cutouts
+
+  top_case:
+    - top_case_one_up_chuck
+    - -_top_left_cutouts
+    - -_top_right_cutouts
+
+  wired_top_case_one_up_chuck:
+    - what: outline
+      name: board_outline
+      extrude: top_case_height
+    - -_wired_top_cutouts
+
+  wired_top_case_chucker_by_the_dozen:
+    - wired_top_case_one_up_chuck
+    - -_top_right_cutouts
+
+  wired_top_case_twentyone_chuck_street:
+    - wired_top_case_one_up_chuck
+    - -_top_left_cutouts
+
+  wired_top_case:
+    - wired_top_case_one_up_chuck
+    - -_top_left_cutouts
+    - -_top_right_cutouts
+
+  _rectangle_top_case_one_up_chuck:
+    - what: outline
+      name: rectangle_case_outline
+      extrude: top_case_height
+    - -_rect_top_cutouts
+
+  _rectangle_top_case_chucker_by_the_dozen:
+    - _rectangle_top_case_one_up_chuck
+    - -_top_right_cutouts
+
+  _rectangle_top_case_twentyone_chuck_street:
+    - _rectangle_top_case_one_up_chuck
+    - -_top_left_cutouts
+
+  _rectangle_top_case:
+    - _rectangle_top_case_one_up_chuck
+    - -_top_left_cutouts
+    - -_top_right_cutouts
+
+  _rectangle_top_common:
+    - what: outline
+      name: _rectangle_case_fill
+      extrude: 1.6
+      shift: [0, 0, bottom_case_height]
+    - what: outline
+      name: _rectangle_clip1
+      extrude: bottom_case_height - 0.4
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rectangle_clip2
+      extrude: 0.1
+      shift: [0, 0, 0.3]
+    - what: outline
+      name: _rectangle_clip3
+      extrude: 0.1
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rectangle_clip4
+      extrude: 0.1
+      shift: [0, 0, 0.1]
+    - what: outline
+      name: _rectangle_clip5
+      extrude: 0.1
+
+  rectangle_top_case_one_up_chuck:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_one_up_chuck
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case_chucker_by_the_dozen:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_chucker_by_the_dozen
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case_twentyone_chuck_street:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_twentyone_chuck_street
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  _top_dovetail:
+    - what: outline
+      name: dovetail
+      extrude: top_case_height / 5
+      shift: [0, 0, 4 * top_case_height / 5]
+    - what: outline
+      name: _dovetail_1
+      extrude: top_case_height / 5
+      shift: [0, 0, 3 * top_case_height / 5]
+    - what: outline
+      name: _dovetail_2
+      extrude: top_case_height / 5
+      shift: [0, 0, 2 * top_case_height / 5]
+    - what: outline
+      name: _dovetail_3
+      extrude: top_case_height / 5
+      shift: [0, 0, top_case_height / 5]
+    - what: outline
+      name: _dovetail_4
+      extrude: top_case_height / 5
+
+  top_dovetail:
+    - _top_dovetail
+    - -_wireless_top_cutouts
+
+  _top_dovetail_sides_1:
+    - top_case_one_up_chuck
+    - -_top_dovetail
+
+  _top_dovetail_sides_2:
+    - top_case
+    - -_top_dovetail
+
+  _dovetail_right:
+    - what: outline
+      name: _right_half
+      extrude: top_case_height
+
+  _dovetail_left:
+    - what: outline
+      name: _left_half
+      extrude: top_case_height
+
+  top_dovetail_left_1:
+    - _top_dovetail_sides_1
+    - -_dovetail_right
+
+  top_dovetail_right_1:
+    - _top_dovetail_sides_1
+    - -_dovetail_left
+
+  top_dovetail_left_2:
+    - _top_dovetail_sides_2
+    - -_dovetail_right
+
+  top_dovetail_right_2:
+    - _top_dovetail_sides_2
+    - -_dovetail_left
+
+  wired_top_dovetail:
+    - _top_dovetail
+    - -_wired_top_cutouts
+
+  _wired_top_dovetail_sides_1:
+    - wired_top_case_one_up_chuck
+    - -_top_dovetail
+
+  _wired_top_dovetail_sides_2:
+    - wired_top_case
+    - -_top_dovetail
+
+  wired_top_dovetail_left_1:
+    - _wired_top_dovetail_sides_1
+    - -_dovetail_right
+
+  wired_top_dovetail_right_1:
+    - _wired_top_dovetail_sides_1
+    - -_dovetail_left
+
+  wired_top_dovetail_left_2:
+    - _wired_top_dovetail_sides_2
+    - -_dovetail_right
+
+  wired_top_dovetail_right_2:
+    - _wired_top_dovetail_sides_2
+    - -_dovetail_left
+
+  battery_cover:
+    - what: outline
+      name: battery_cover_outline
+      extrude: battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_1
+      extrude: 2 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_2
+      extrude: 3 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_3
+      extrude: 4 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_4
+      extrude: 5 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_5
+      extrude: 6 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_6
+      extrude: 7 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_7
+      extrude: 8 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_8
+      extrude: 9 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_9
+      extrude: 10 * battery_cover_height / 10
+    - what: outline
+      name: _xiao_light_guide
+      extrude: battery_cover_height
+      operation: subtract
+    - what: outline
+      name: _battery_cutout
+      extrude: battery_cover_height - 1
+      operation: subtract
+    - what: outline
+      name: _jst_cutout
+      extrude: 3
+      operation: subtract
+    - what: outline
+      name: _top_heat_set
+      extrude: 3
+      operation: subtract
+    - what: outline
+      name: _top_heat_set_passage
+      extrude: 1.5
+      shift: [0, 0, 3]
+      operation: subtract
+
+  # Remove the underscore to print out the mock PCB if you want to check for fit
+  _mock_pcb:
+    - what: outline
+      name: pcb_outline
+      extrude: 1.6
+    - what: outline
+      name: _socket_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _screw_shaft
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _power_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _jst_pcb_holes
+      extrude: 1.6
+      operation: subtract
+pcbs:
+  gigas:
+    template: kicad8
+    outlines:
+      main:
+        outline: pcb_outline
+    params:
+      name: *keyboard_name
+      paper: A4
+
+    footprints:
+      hotswap_sockets:
+        what: choc-v1-v2
+        where: [opt_switch, switch]
+        params:
+          from: "{{cpsrc}}"
+          to: "{{colrow}}"
+          include_keycap: true
+          include_corner_marks: true
+
+      charlieplex_map:
+        what: text
+        where: [opt_switch, switch]
+        adjust:
+          shift: [-3/5 hdx, hdy / 3]
+          resist: true
+        params:
+          side: B
+          text: "{{cpsrc}}-{{cpdst}}"
+
+      diodes:
+        what: sod123
+        where: [opt_switch, switch]
+        adjust:
+          shift: [0, -4]
+          resist: true
+        params:
+          side: B
+          designator: SW
+          from: "{{colrow}}"
+          to: "D_{{cpdst}}"
+          smd: true
+          via: pad
+          labels: true
+
+      dpad_charlieplex:
+        what: text
+        where: dpad
+        adjust.shift: [0, hdy]
+        params:
+          side: B
+          text: "{{cpsrc}}-{{cpdst}}"
+
+      dpad_diode:
+        what: sod123
+        where: dpad
+        adjust:
+          shift: [0, 14]
+        params:
+          side: B
+          designator: SW
+          from: encdiode
+          to: "D_{{cpdst}}"
+          smd: true
+          via: pad
+          labels: true
+
+      return_diodes:
+        what: sod123
+        where: return
+        adjust.shift: [0, -0.4 dy]
+        params:
+          side: B
+          designator: D
+          from: "D_{{cpdst}}"
+          to: "{{cpdst}}"
+          smd: true
+          via: pad
+          labels: true
+
+      interrupt_diodes:
+        what: sod123
+        where: return
+        adjust.shift: [0, -0.55 dy]
+        params:
+          side: B
+          designator: I
+          from: "D_{{cpdst}}"
+          to: CP_INT
+          smd: true
+          via: pad
+          labels: true
+
+      dpad:
+        what: skrh
+        where: dpad
+        adjust.rotate: -45
+        params:
+          A: "{{a}}"
+          B: "{{b}}"
+          C: "{{c}}"
+          D: "{{d}}"
+          CENTER: "{{push}}"
+          COMMON: "{{col}}"
+
+      xiao_mcu:
+        what: xiao
+        where: mcu
+        params:
+          side: B
+          orientation: down
+          VUSB: none
+          VCC: none
+          P0: CP0
+          P1: CP1
+          P2: CP2
+          P3: CP3
+          P4: CP4
+          P5: CP5
+          P6: CP6
+          P7: CP_INT
+          P8: ENC_B
+          P9: ENC_A
+          P10: none
+
+      xiao_note:
+        what: text
+        where: mcu
+        adjust.shift: [0, -12]
+        params:
+          side: B
+          text: XIAO BLE FACE DOWN
+
+      xiao_bat_pos:
+        what: pad
+        where: xiao_pos_pad
+        params:
+          text_side: B
+          net: BAT+
+          text: BAT+
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      xiao_reset:
+        what: pad
+        where: reset_pad
+        params:
+          text_side: B
+          net: RST
+          text: RST
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      nfc_pads:
+        what: pad
+        where: nfc_pad
+        params:
+          text_side: B
+          net: "{{col}}"
+          text: "{{col}}"
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      battery_jst:
+        what: jst-ph-2
+        where: jst
+        params:
+          BAT_P: RAW
+          BAT_N: GND
+
+      reset_button:
+        what: reset-smd-top
+        where: reset
+        params:
+          side: B
+          from: GND
+          to: RST
+
+      reset_note:
+        what: text
+        where: reset
+        adjust:
+          shift: [-9, 0]
+        params:
+          side: B
+          text: RESET
+          justify: left
+
+      power_slider:
+        what: trislider
+        where: power
+        params:
+          side: B
+          posts: true
+          vias: true
+          COM: RAW
+          A: BAT+
+
+      power_label:
+        what: text
+        where: power
+        adjust.shift: [-4.5, 0.6]
+        params:
+          side: B
+          text: POWER
+          justify: right
+
+      power_on:
+        what: text
+        where: power
+        adjust.shift: [-4.5, -0.8]
+        params:
+          side: B
+          text: ON
+          justify: right
+
+      power_off:
+        what: text
+        where: power
+        adjust.shift: [4.5, 0.6]
+        params:
+          side: B
+          text: OFF
+          justify: left
+
+      mounting_holes:
+        what: mountinghole
+        where: screw
+
+      board_logo:
+        what: mushroom
+        where: dpad
+        adjust.shift: [1, 6]
+        params:
+          side: F
+
+      keyboard_name:
+        what: text
+        where: matrix_pinky_bottom
+        adjust.shift: [dx - 4.5, -0.85 hdy]
+        params:
+          side: F
+          text: *keyboard_name
+          layer: Cu
+          size: 3
+          thickness: 0.5
+          justify: left
+
+      board_version:
+        what: text
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -hdy]
+        params:
+          text: *version
+          side: F
+
+      board_repo:
+        what: text
+        where.aggregate.parts: [thumbs_outer_spot, mirror_thumbs_outer_spot]
+        adjust.shift: [0, -0.65 dy]
+        params:
+          side: F
+          text: *repo
+
+      license_note:
+        what: text
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [dx, -hdy]
+        params:
+          side: F
+          text: *license
+          justify: right
+
+      license_logo:
+        what: oshw
+        where: mirror_matrix_pinky_bottom
+        adjust.shift: [1.65 dx, -0.1 dy]
+        params:
+          side: F
+
+      order_number:
+        what: text
+        where: dpad
+        adjust.shift: [0, hdy - 2.75]
+        params:
+          side: F
+          text: *order_text
