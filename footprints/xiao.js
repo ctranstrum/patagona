@@ -134,6 +134,7 @@ module.exports = {
     }
 
     function vias(def_neg, def_pos, x, y) {
+      if (!p.vias) return "";
       const left = def_neg + String(x + 10);
       const right = def_pos + String(x + 10);
       return `

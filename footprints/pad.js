@@ -26,8 +26,8 @@ module.exports = {
       }
       if (align == "left") x -= p.width / 2 + plus;
       if (align == "right") x += p.width / 2 + plus;
-      if (align == "up") y += p.height / 2 + plus;
-      if (align == "down") y -= p.height / 2 + plus;
+      if (align == "up") y -= p.height / 2 - 1;
+      if (align == "down") y += p.height / 2 + 1;
       const text =
         p.text &&
         (p.text_side === "" || p.text_side === "both" || p.text_side === side)
@@ -45,22 +45,16 @@ module.exports = {
     const via = `(pad 1 thru_hole circle (at 0 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.net})`;
 
     return `
-
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
-
             ${p.at /* parametric position */}
-
             ${"" /* footprint reference */}
             (fp_text reference "${p.ref}" (at 0 0) (layer F.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
-
             ${"" /* SMD pads */}
             ${layout(p.side !== "B", "F")}
             ${layout(p.side !== "F", "B")}
             ${p.side === "both" ? via : ""}
-
         )
-
         `;
   },
 };

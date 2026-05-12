@@ -33,11 +33,11 @@ module.exports = {
     const vert = (vsign, vval) => `(at 0 ${vsign}${vval} ${p.r})`;
     const boss = (s) =>
       `np_thru_hole circle (size ${s} ${s}) (drill ${s}) (layers "*.Cu" "*.Mask")`;
+    const bosses = p.include_bosses
+      ? `(pad "" ${boss(0.75)} ${vert(up, 1.9)})(pad "" ${boss(1.05)} ${vert(down, 1.9)})`
+      : "";
     const pad = `(size 1.35 1) (layers ${p.side}.Cu ${p.side}.Paste ${p.side}.Mask)`;
     const gnd = `(size 2 1.8) (layers ${p.side}.Cu ${p.side}.Paste ${p.side}.Mask)`;
-    const bosses = p.include_bosses
-      ? `(pad "" ${boss(0.375)} ${vert(up, 1.9)})(pad "" ${boss(0.525)} ${vert(down, 1.9)})`
-      : "";
     return `
     (module Alps_Alpine_SKRH (layer ${p.side}.Cu)
       (descr "https://tech.alpsalpine.com/e/products/category/muiti-control-devices/sub/02/series/skrh/")
