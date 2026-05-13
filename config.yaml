@@ -24,6 +24,7 @@ units:
   battery_cover_height: 7
 
   mirrored_distance: 1.75 dx
+
 points:
   zones:
     matrix:
@@ -285,7 +286,7 @@ points:
         distance: mirrored_distance
 
     pinky_low_screw:
-      key.tags: [screw]
+      key.tags: [screw, rect_screw]
       anchor:
         ref: matrix_pinky_bottom
         shift: [hdx - 0.5, hdy]
@@ -332,6 +333,7 @@ points:
       anchor:
         ref: dpad
         shift: [0, -1.5 dy]
+
 outlines:
   _central_bridge:
     - what: rectangle
@@ -415,7 +417,7 @@ outlines:
     - what: rectangle
       where:
         aggregate.parts: [matrix_index_home, mirror_matrix_index_home]
-      size: [230, 97.4]
+      size: [228.8, 96.95]
       adjust.shift: [0, -5]
       corner: 5
 
@@ -424,6 +426,10 @@ outlines:
     - what: outline
       name: _rectangle_outline
       fillet: 15
+
+  rectangle_case_planner:
+    - rectangle_case_outline
+    - -board_outline
 
   _rectangle_snap1:
     - what: outline
@@ -555,6 +561,11 @@ outlines:
       where: mcu
       size: [14, 25]
       adjust.shift: [0, -4]
+    - what: rectangle
+      where: mcu
+      size: [17, 9]
+      adjust.shift: [0, -15]
+      corner: 1
 
   _xiao_cutout_wall:
     - what: rectangle
@@ -562,7 +573,7 @@ outlines:
       size: [19, 21.5]
       corner: 1
 
-      # Make some room for the solder
+  # Make some room for the solder
   _xiao_cutout_solder:
     - what: rectangle
       where: mcu
@@ -598,7 +609,7 @@ outlines:
   _power_cutout:
     - what: rectangle
       where: power
-      size: [9, 4.7]
+      size: [9, 5.1]
       adjust.shift: [0, -0.2]
 
   _reset_outline:
@@ -1048,12 +1059,6 @@ outlines:
       name: _hex_nut
       where: screw
 
-  _hex_nuts_wired:
-    - _hex_nuts
-    - what: outline
-      name: _hex_nut
-      where: top_screw
-
   _rect_hex_nuts:
     - what: outline
       name: _hex_nut
@@ -1374,6 +1379,454 @@ outlines:
     - -dovetail
     - ^_left_half
     - ^_right_half
+
+cases:
+  _countersunk_screw:
+    - what: outline
+      name: _countersink1
+      extrude: 0.2
+    - what: outline
+      name: _countersink2
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _countersink3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _countersink4
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _countersink5
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _screw_shaft
+      extrude: bottom_case_height - 1
+      shift: [0, 0, 1]
+
+  _rect_countersunk_screw:
+    - what: outline
+      name: _rect_countersink1
+      extrude: 0.2
+    - what: outline
+      name: _rect_countersink2
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rect_countersink3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rect_countersink4
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _rect_countersink5
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _rect_screw_shaft
+      extrude: bottom_case_height - 1
+      shift: [0, 0, 1]
+
+  _reset_bottom_cutout:
+    - what: outline
+      name: _reset_cutout
+      extrude: 1.2
+      shift: [0, 0, bottom_case_height - 1.2]
+    - what: outline
+      name: _reset_button_cutout_large
+      extrude: 0.2
+    - what: outline
+      name: _reset_button_cutout_medium
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _reset_button_cutout_small
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _reset_button_cutout_smallest
+      extrude: bottom_case_height - 1.8
+      shift: [0, 0, 0.6]
+
+  _bottom_cutouts:
+    - what: outline
+      name: _socket_cutout
+      extrude: 2
+      shift: [0, 0, bottom_case_height - 2]
+    - what: outline
+      name: _switch_holes_placed
+      extrude: 1.8
+      shift: [0, 0, bottom_case_height - 1.8]
+    - what: outline
+      name: _diodes_cutout
+      extrude: 1.4
+      shift: [0, 0, bottom_case_height - 1.4]
+    - what: outline
+      name: _xiao_bottom_cutout
+      extrude: 2.5
+      shift: [0, 0, bottom_case_height - 2.5]
+    - what: outline
+      name: _xiao_cutout_wall
+      extrude: 1.2
+      shift: [0, 0, bottom_case_height - 1.2]
+    - what: outline
+      name: _xiao_cutout_solder
+      extrude: 0.5
+      shift: [0, 0, bottom_case_height - 1.2 - 0.5]
+    - what: outline
+      name: _power_cutout
+      extrude: 1.6
+      shift: [0, 0, bottom_case_height - 1.6]
+    - what: outline
+      name: _jst_tht_cutout
+      extrude: 1.6
+      shift: [0, 0, bottom_case_height - 1.6]
+    - _reset_bottom_cutout
+
+  rectangle_bottom_case:
+    - what: outline
+      name: _rectangle_snap8
+      extrude: 0.1
+    - what: outline
+      name: _rectangle_snap7
+      extrude: 0.1
+      shift: [0, 0, 0.1]
+    - what: outline
+      name: _rectangle_snap6
+      extrude: 0.1
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rectangle_snap5
+      extrude: 0.1
+      shift: [0, 0, 0.3]
+    - what: outline
+      name: _rectangle_snap4
+      extrude: 0.1
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rectangle_snap3
+      extrude: bottom_case_height - 0.5
+      shift: [0, 0, 0.5]
+    - what: outline
+      name: _rect_bumpers
+      extrude: 1
+      operation: subtract
+    - -_bottom_cutouts
+    - -_rect_countersunk_screw
+
+  bottom_case:
+    - what: outline
+      name: board_outline
+      extrude: bottom_case_height
+    - what: outline
+      name: _all_bumpers
+      extrude: 1
+      operation: subtract
+    - -_bottom_cutouts
+    - -_countersunk_screw
+
+  _top_cutouts:
+    - what: outline
+      name: _xiao_light_guide
+      extrude: top_case_height
+    - what: outline
+      name: _switches_plate_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _dpad_plate_cutout
+      extrude: 1.2
+    - what: outline
+      name: _switches_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _switches_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+    - what: outline
+      name: _xiao_usb_cutout
+      extrude: 1.7
+    - what: outline
+      name: _xiao_chip
+      extrude: 0.2
+    - what: outline
+      name: _pad_cutout
+      extrude: 1
+    - what: outline
+      name: _top_heat_set_passage
+      extrude: top_case_height
+    - what: outline
+      name: _jst_cutout
+      extrude: top_case_height
+
+  _shaped_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _hex_nuts
+      extrude: 1.8
+
+  _rect_top_cutouts:
+    - _top_cutouts
+    - what: outline
+      name: _rect_hex_nuts
+      extrude: 1.8
+
+  _top_left_cutouts:
+    - what: outline
+      name: _optional_left_switch_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _optional_left_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _optional_left_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+
+  _top_right_cutouts:
+    - what: outline
+      name: _optional_right_switch_cutout
+      extrude: top_case_height
+    - what: outline
+      name: _optional_right_clip_cutout
+      extrude: top_case_height - 1.3
+    - what: outline
+      name: _optional_right_swap_tool
+      extrude: 1
+      shift: [0, 0, top_case_height - 1]
+
+  top_case_1_1:
+    - what: outline
+      name: board_outline
+      extrude: top_case_height
+    - -_shaped_top_cutouts
+
+  top_case_1_2:
+    - top_case_1_1
+    - -_top_right_cutouts
+
+  top_case_2_1:
+    - top_case_1_1
+    - -_top_left_cutouts
+
+  top_case_2_2:
+    - top_case_1_1
+    - -_top_left_cutouts
+    - -_top_right_cutouts
+
+  _rectangle_top_case_1_1:
+    - what: outline
+      name: rectangle_case_outline
+      extrude: top_case_height
+    - -_rect_top_cutouts
+
+  _rectangle_top_case_1_2:
+    - _rectangle_top_case_1_1
+    - -_top_right_cutouts
+
+  _rectangle_top_case_2_1:
+    - _rectangle_top_case_1_1
+    - -_top_left_cutouts
+
+  _rectangle_top_case_2_2:
+    - _rectangle_top_case_1_1
+    - -_top_left_cutouts
+    - -_top_right_cutouts
+
+  _rectangle_top_common:
+    - what: outline
+      name: _rectangle_case_fill
+      extrude: 1.6
+      shift: [0, 0, bottom_case_height]
+    - what: outline
+      name: _rectangle_clip1
+      extrude: bottom_case_height - 0.4
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _rectangle_clip2
+      extrude: 0.1
+      shift: [0, 0, 0.3]
+    - what: outline
+      name: _rectangle_clip3
+      extrude: 0.1
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _rectangle_clip4
+      extrude: 0.1
+      shift: [0, 0, 0.1]
+    - what: outline
+      name: _rectangle_clip5
+      extrude: 0.1
+
+  rectangle_top_case_1_1:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_1_1
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case_1_2:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_1_2
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case_2_1:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_2_1
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  rectangle_top_case_2_2:
+    - _rectangle_top_common
+    - what: case
+      name: _rectangle_top_case_2_2
+      shift: [0, 0, 1.6 + bottom_case_height]
+
+  _top_dovetail:
+    - what: outline
+      name: dovetail
+      extrude: top_case_height / 5
+      shift: [0, 0, 4 * top_case_height / 5]
+    - what: outline
+      name: _dovetail_1
+      extrude: top_case_height / 5
+      shift: [0, 0, 3 * top_case_height / 5]
+    - what: outline
+      name: _dovetail_2
+      extrude: top_case_height / 5
+      shift: [0, 0, 2 * top_case_height / 5]
+    - what: outline
+      name: _dovetail_3
+      extrude: top_case_height / 5
+      shift: [0, 0, top_case_height / 5]
+    - what: outline
+      name: _dovetail_4
+      extrude: top_case_height / 5
+
+  top_dovetail:
+    - _top_dovetail
+    - -_top_cutouts
+
+  _top_dovetail_sides_1:
+    - top_case_1_1
+    - -_top_dovetail
+
+  _top_dovetail_sides_2:
+    - top_case_2_2
+    - -_top_dovetail
+
+  _dovetail_right:
+    - what: outline
+      name: _right_half
+      extrude: top_case_height
+
+  _dovetail_left:
+    - what: outline
+      name: _left_half
+      extrude: top_case_height
+
+  top_dovetail_left_1:
+    - _top_dovetail_sides_1
+    - -_dovetail_right
+
+  top_dovetail_right_1:
+    - _top_dovetail_sides_1
+    - -_dovetail_left
+
+  top_dovetail_left_2:
+    - _top_dovetail_sides_2
+    - -_dovetail_right
+
+  top_dovetail_right_2:
+    - _top_dovetail_sides_2
+    - -_dovetail_left
+
+  battery_cover:
+    - what: outline
+      name: battery_cover_outline
+      extrude: battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_1
+      extrude: 2 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_2
+      extrude: 3 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_3
+      extrude: 4 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_4
+      extrude: 5 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_5
+      extrude: 6 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_6
+      extrude: 7 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_7
+      extrude: 8 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_8
+      extrude: 9 * battery_cover_height / 10
+    - what: outline
+      name: _battery_cover_outline_9
+      extrude: 10 * battery_cover_height / 10
+    - what: outline
+      name: _xiao_light_guide
+      extrude: battery_cover_height
+      operation: subtract
+    - what: outline
+      name: _battery_cutout
+      extrude: battery_cover_height - 1
+      operation: subtract
+    - what: outline
+      name: _jst_cutout
+      extrude: 3
+      operation: subtract
+    - what: outline
+      name: _top_heat_set
+      extrude: 3
+      operation: subtract
+    - what: outline
+      name: _top_heat_set_passage
+      extrude: 1.5
+      shift: [0, 0, 3]
+      operation: subtract
+
+  # Remove the underscore to print out the mock PCB if you want to check for fit
+  mock_pcb:
+    - what: outline
+      name: pcb_outline
+      extrude: 1.6
+    - what: outline
+      name: _switch_holes_placed
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _socket_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _screw_shaft
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _power_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _jst_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _pad_cutout
+      extrude: 1.6
+      operation: subtract
+
 pcbs:
   gigas:
     template: kicad8
@@ -1576,9 +2029,9 @@ pcbs:
         where: top_screw
 
       board_logo:
-        what: mushroom
+        what: p-gigas
         where: dpad
-        adjust.shift: [1, 6]
+        adjust.shift: [0, 30]
         params:
           side: F
 
