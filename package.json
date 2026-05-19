@@ -15,8 +15,8 @@
     "save-cases-chaski": "cp output/cases/*.stl cases/chaski",
     "save-cases-gigas": "cp output/cases/*.stl cases/gigas",
     "ergo": "ergogen .",
-    "ergo-chaski": "cp chaski.yam config.yaml ; npm run ergo ; rm config.yaml",
-    "ergo-gigas": "cp gigas.yam config.yaml ; npm run ergo ; rm config.yaml",
+    "ergo-chaski": "cp chaski.yaml config.yaml ; npm run ergo ; rm config.yaml",
+    "ergo-gigas": "cp gigas.yaml config.yaml ; npm run ergo ; rm config.yaml",
     "stl": "node stl.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

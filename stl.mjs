@@ -37,6 +37,21 @@ const plural = (count, name) => `${count} ${name}${count === 1 ? "" : "s"}`;
 console.log("Found", plural(jscad.length, "jscad file"));
 console.log("Found", plural(stl.length, "stl file"));
 
+const extra = stl.filter((s) => jscad.every((j) => j.name !== s));
+if (extra.length > 0) {
+  console.log(
+    "Cleaning up",
+    plural(extra.length, "stl file"),
+    "without a corresponding jscad file",
+  );
+  for (const name of extra) {
+    try {
+      fs.unlinkSync(`${dir}/${name}.stl`);
+      fs.unlinkSync(`${dir}/${name}.md5`);
+    } catch {}
+  }
+}
+
 const calcmd5 = (content) => {
   const hash = crypto.createHash("md5");
   hash.update(content);

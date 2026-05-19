@@ -777,7 +777,14 @@ outlines:
   _dpad_plate_cutout:
     - what: outline
       name: _dpad_outline
-      expand: 0.15
+      expand: 0.5
+      where: dpad
+      adjust.rotate: -45
+
+  _dpad_plate_solder_cutout:
+    - what: outline
+      name: _dpad_outline
+      expand: 1
       where: dpad
       adjust.rotate: -45
 
@@ -1588,8 +1595,8 @@ cases:
       name: _switches_plate_cutout
       extrude: top_case_height
     - what: outline
-      name: _dpad_plate_cutout
-      extrude: 1.2
+      name: _dpad_plate_solder_cutout
+      extrude: 1
     - what: outline
       name: _switches_clip_cutout
       extrude: top_case_height - 1.3
