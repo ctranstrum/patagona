@@ -301,7 +301,7 @@ outlines:
   _keys_surround:
     - what: outline
       name: _key_area
-      where: switch
+      where: [switch, opt_switch]
     - what: outline
       name: _key_area
       where.ref: matrix_ring_top
