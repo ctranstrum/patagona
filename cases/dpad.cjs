@@ -11,19 +11,19 @@ const segments = 90;
 
 function main() {
   const knob = translateZ(
-    3,
+    1.25,
     roundedCylinder({
-      height: 10.4,
-      radius: 12.5,
-      roundRadius: 4,
+      height: 5,
+      radius: 7.4,
+      roundRadius: 2,
       segments,
     }),
   );
 
   const stem = translateZ(
-    1.49,
+    0.79,
     cuboid({
-      size: [2.05, 2.05, 3],
+      size: [2, 2, 1.6],
     }),
   );
 
@@ -36,22 +36,22 @@ function main() {
     }),
   );
 
-  const width = 8;
-  const length = 24;
+  const width = 4.5;
+  const length = 14;
   const plus = translateZ(
-    6,
+    2,
     union(
-      roundedCuboid({ size: [width, length, 4], roundRadius: 1, segments }),
-      roundedCuboid({ size: [length, width, 4], roundRadius: 1, segments }),
+      roundedCuboid({ size: [width, length, 3.3], roundRadius: 1, segments }),
+      roundedCuboid({ size: [length, width, 3.3], roundRadius: 1, segments }),
     ),
   );
 
-  const push = translateZ(12.5, sphere({ radius: 5, segments }));
+  const push = translateZ(8.3, sphere({ radius: 5, segments }));
 
-  const arrow = 4;
+  const arrow = 2.5;
   const values = [arrow, arrow, arrow];
   const up = translate(
-    [-arrow / 2, length / 4 + arrow / 3, 7.6],
+    [-arrow / 2, length / 4 + arrow / 5, 3.4],
     extrudeLinear({}, triangle({ values })),
   );
   const left = rotateZ(Math.PI / 2, up);

@@ -19,9 +19,9 @@ function main() {
   );
 
   const stem = translateZ(
-    0.99,
+    0.79,
     cuboid({
-      size: [2.05, 2.05, 2],
+      size: [2, 2, 1.6],
     }),
   );
 
