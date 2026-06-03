@@ -8,7 +8,7 @@ const { translateZ } = jscad.transforms;
 const segments = 90;
 
 function main() {
-  const knob = translateZ(
+  const base = translateZ(
     1,
     roundedCylinder({
       height: 4,
@@ -17,6 +17,10 @@ function main() {
       segments,
     }),
   );
+
+  const stick = translateZ(3, cylinder({ height: 6, radius: 2.5, segments }));
+
+  const ball = translateZ(6, sphere({ radius: 3.5, segments }));
 
   const stem = translateZ(
     0.79,
@@ -36,11 +40,7 @@ function main() {
 
   const ceiling = translateZ(11, cylinder({ height: 4, radius: 15, segments }));
 
-  const stick = translateZ(3.5, cylinder({ height: 7, radius: 1.5, segments }));
-
-  const ball = translateZ(7, sphere({ radius: 2.5, segments }));
-
-  return [subtract(union(knob, stick, ball), stem, floor, ceiling)];
+  return [subtract(union(base, stick, ball), stem, floor, ceiling)];
 }
 
 module.exports = { main };

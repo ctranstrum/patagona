@@ -750,6 +750,13 @@ outlines:
       size: 7.5
       corner: 1.25
 
+  _dpad_solder_outline:
+    - what: rectangle
+      size: 9.5
+      corner: 1.5
+    - what: rectangle
+      size: [3, 13]
+
   _dpad_pre_visualizer:
     - _dpad_outline
     - what: rectangle
@@ -783,8 +790,7 @@ outlines:
 
   _dpad_plate_solder_cutout:
     - what: outline
-      name: _dpad_outline
-      expand: 1
+      name: _dpad_solder_outline
       where: dpad
       adjust.rotate: -45
 
