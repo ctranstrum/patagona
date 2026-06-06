@@ -850,6 +850,11 @@ outlines:
       where: pad_circle
       radius: 1.5
 
+  _pad_pcb_hole:
+    - what: circle
+      where: pad_circle
+      radius: 0.5
+
   _screw_shaft:
     - what: circle
       where: [screw, top_screw]
@@ -1493,7 +1498,8 @@ cases:
       extrude: top_case_height
     - what: outline
       name: _switches_plate_cutout
-      extrude: top_case_height
+      extrude: 1.3
+      shift: [0, 0, top_case_height - 1.3]
     - what: outline
       name: _switches_clip_cutout
       extrude: top_case_height - 1.3
@@ -1808,7 +1814,7 @@ cases:
       extrude: 1.6
       operation: subtract
     - what: outline
-      name: _pad_cutout
+      name: _pad_pcb_hole
       extrude: 1.6
       operation: subtract
 

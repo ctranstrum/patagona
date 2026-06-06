@@ -20,6 +20,25 @@ const readInto = (name, file, collection) => {
   collection.push({ name, content });
 };
 
+const reducePrecision = (base) => {
+  const file = `${dir}/${base}.stl`;
+  const stl = fs.readFileSync(file, "utf8");
+  const out = [];
+  for (const line of stl.split("\n")) {
+    // if (line.startsWith("facet normal"))
+    //   out.push("facet normal 0 0 0");
+    // } else {
+    out.push(
+      line.replaceAll(/\b[0-9]+\.[0-9]{3,}\b/g, (num) =>
+        Number(num).toFixed(2),
+      ),
+    );
+    // }
+  }
+  fs.unlinkSync(file);
+  fs.writeFileSync(file, out.join("\n"));
+};
+
 // read all files in the directory
 for (const file of fs.readdirSync(dir)) {
   const short = file.replace(/\..*$/, "");
@@ -91,10 +110,12 @@ for (const file of needs) {
     console.error("Error rendering", file);
     console.error(result.stderr.toString() || result.stdout.toString());
   } else {
-    console.log(" ... done");
+    // reduce the precision of the files
+    reducePrecision(file);
     // and save the md5 sum
     const { content } = jscad.find((f) => f.name === file);
     const hash = calcmd5(content);
     fs.writeFileSync(`${dir}/${file}.md5`, hash);
+    console.log(" ... done");
   }
 }

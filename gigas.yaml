@@ -794,6 +794,20 @@ outlines:
       where: dpad
       adjust.rotate: -45
 
+  _dpad_pcb_holes_model:
+    - what: circle
+      radius: 0.375
+      adjust.shift: [0, 1.9]
+    - what: circle
+      radius: 0.525
+      adjust.shift: [0, -1.9]
+
+  _dpad_pcb_holes:
+    - what: outline
+      name: _dpad_pcb_holes_model
+      where: dpad
+      adjust.rotate: -45
+
   _diode:
     - what: rectangle
       size: [2.7, 1.65]
@@ -989,6 +1003,11 @@ outlines:
     - what: circle
       where: pad_circle
       radius: 1.5
+
+  _pad_pcb_holes:
+    - what: circle
+      where: pad_circle
+      radius: 0.5
 
   _screw_shaft:
     - what: circle
@@ -1599,7 +1618,8 @@ cases:
       extrude: top_case_height
     - what: outline
       name: _switches_plate_cutout
-      extrude: top_case_height
+      extrude: 1.3
+      shift: [0, 0, top_case_height - 1.3]
     - what: outline
       name: _dpad_plate_solder_cutout
       extrude: 1
@@ -1917,7 +1937,11 @@ cases:
       extrude: 1.6
       operation: subtract
     - what: outline
-      name: _pad_cutout
+      name: _pad_pcb_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _dpad_pcb_holes
       extrude: 1.6
       operation: subtract
 
