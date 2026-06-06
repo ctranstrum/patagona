@@ -5,22 +5,25 @@ const { union, subtract } = jscad.booleans;
 const { cuboid, cylinder, roundedCylinder, sphere } = jscad.primitives;
 const { translateZ } = jscad.transforms;
 
-const segments = 90;
+const segments = (r) => Math.round(2 * Math.PI * r) * 2;
+
+const radius = (r) => {
+  return { radius: r, segments: segments(r) };
+};
 
 function main() {
   const base = translateZ(
     1,
     roundedCylinder({
       height: 4,
-      radius: 8,
+      ...radius(8),
       roundRadius: 1.5,
-      segments,
     }),
   );
 
-  const stick = translateZ(3, cylinder({ height: 6, radius: 2.5, segments }));
+  const stick = translateZ(3, cylinder({ height: 6, ...radius(2.5) }));
 
-  const ball = translateZ(6, sphere({ radius: 3.5, segments }));
+  const ball = translateZ(6, sphere(radius(3.5)));
 
   const stem = translateZ(
     0.79,
@@ -29,16 +32,9 @@ function main() {
     }),
   );
 
-  const floor = translateZ(
-    -2,
-    cylinder({
-      height: 4,
-      radius: 15,
-      segments,
-    }),
-  );
+  const floor = translateZ(-2, cylinder({ height: 4, ...radius(9) }));
 
-  const ceiling = translateZ(11, cylinder({ height: 4, radius: 15, segments }));
+  const ceiling = translateZ(11, cylinder({ height: 4, ...radius(9) }));
 
   return [subtract(union(base, stick, ball), stem, floor, ceiling)];
 }

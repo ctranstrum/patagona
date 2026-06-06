@@ -7,16 +7,19 @@ const { cuboid, roundedCuboid, cylinder, roundedCylinder, sphere, triangle } =
   jscad.primitives;
 const { rotateZ, translate, translateZ } = jscad.transforms;
 
-const segments = 90;
+const segments = (r) => Math.round(2 * Math.PI * r) * 2;
+
+const radius = (r) => {
+  return { radius: r, segments: segments(r) };
+};
 
 function main() {
   const knob = translateZ(
     1.25,
     roundedCylinder({
       height: 5,
-      radius: 7.4,
+      ...radius(7.4),
       roundRadius: 2,
-      segments,
     }),
   );
 
@@ -31,8 +34,7 @@ function main() {
     -2,
     cylinder({
       height: 4,
-      radius: 15,
-      segments,
+      ...radius(15),
     }),
   );
 
@@ -41,12 +43,20 @@ function main() {
   const plus = translateZ(
     2,
     union(
-      roundedCuboid({ size: [width, length, 3.3], roundRadius: 1, segments }),
-      roundedCuboid({ size: [length, width, 3.3], roundRadius: 1, segments }),
+      roundedCuboid({
+        size: [width, length, 3.3],
+        roundRadius: 1,
+        segments: segments(2),
+      }),
+      roundedCuboid({
+        size: [length, width, 3.3],
+        roundRadius: 1,
+        segments: segments(2),
+      }),
     ),
   );
 
-  const push = translateZ(8.3, sphere({ radius: 5, segments }));
+  const push = translateZ(8.3, sphere(radius(5)));
 
   const arrow = 2.5;
   const values = [arrow, arrow, arrow];
