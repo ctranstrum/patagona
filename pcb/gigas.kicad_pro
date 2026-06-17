@@ -284,7 +284,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gigas",
       "specctra_dsn": "",
       "vrml": ""
     },

@@ -118,7 +118,7 @@ points:
       columns:
         inner.rows.spot:
           splay: -15
-          kcol: NFC1
+          kcol: NFC2
           krow: P5
           mirror.krow: P8
           tags: [opt_switch, low_bumper]
@@ -134,7 +134,7 @@ points:
         shift: [0, 1.05 dy]
       key:
         tags: [dpad]
-        kcol: NFC2
+        kcol: NFC1
         a: dpad_a
         b: dpad_b
         c: dpad_c
@@ -147,7 +147,7 @@ points:
         shift: [0, hdy]
       key:
         tags: [dpad_diode]
-        kcol: NFC2
+        kcol: NFC1
         diode: dpad_a
         krow: P4
     dpad_b:
@@ -156,7 +156,7 @@ points:
         shift: [hdx, 0]
       key:
         tags: [dpad_diode]
-        kcol: NFC2
+        kcol: NFC1
         diode: dpad_b
         krow: P5
     dpad_c:
@@ -165,7 +165,7 @@ points:
         shift: [-hdx, 0]
       key:
         tags: [dpad_diode]
-        kcol: NFC2
+        kcol: NFC1
         diode: dpad_c
         krow: P6
     dpad_d:
@@ -174,7 +174,7 @@ points:
         shift: [0, -hdy]
       key:
         tags: [dpad_diode]
-        kcol: NFC2
+        kcol: NFC1
         diode: dpad_d
         krow: P7
     dpad_push:
@@ -183,7 +183,7 @@ points:
         shift: [-0.75 hdx, 0.5 hdy]
       key:
         tags: [dpad_diode]
-        kcol: NFC2
+        kcol: NFC1
         diode: dpad_push
         krow: P8
 
@@ -224,21 +224,21 @@ points:
         ref: pad_xiao_pos
         shift: [4, 0]
 
-    pad_nfc2:
+    pad_nfc1:
       anchor:
         ref: pad_reset
         shift: [4, 0]
       key:
         tags: [pad_circle, nfc_pad]
-        kcol: NFC2
+        kcol: NFC1
 
-    pad_nfc1:
+    pad_nfc2:
       anchor:
-        ref: pad_nfc2
+        ref: pad_nfc1
         shift: [4, 0]
       key:
         tags: [pad_circle, nfc_pad]
-        kcol: NFC1
+        kcol: NFC2
 
     jst:
       key.tags: [jst]

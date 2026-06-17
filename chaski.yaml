@@ -64,11 +64,11 @@ points:
             bottom:
               krow: P7
             home:
-              krow: NFC1
+              krow: NFC2
             top:
               orient: -5
               shift: [3, 2]
-              krow: NFC2
+              krow: NFC1
         ring:
           key:
             spread: 1.05 dx
@@ -94,10 +94,10 @@ points:
             bottom:
               krow: P7
             home:
-              krow: NFC1
+              krow: NFC2
             top:
               tags: [switch, mid_bumper]
-              krow: NFC2
+              krow: NFC1
         index:
           key:
             stagger: -hdx
@@ -120,9 +120,9 @@ points:
             bottom:
               krow: P7
             home:
-              krow: NFC1
-            top:
               krow: NFC2
+            top:
+              krow: NFC1
 
     # thumb zone
     thumbs:
@@ -148,13 +148,13 @@ points:
           splay: -15
           origin: [-cx / 2, -cy / 2]
           krow: P5
-          mirror.krow: NFC1
+          mirror.krow: NFC2
         reachy.rows.spot:
           splay: -15
           origin: [-cx / 2, -cy / 2]
           tags: [switch, thumb_bumper]
           krow: P4
-          mirror.krow: NFC2
+          mirror.krow: NFC1
 
     # component zones
     mcu:
@@ -198,21 +198,21 @@ points:
         ref: pad_xiao_pos
         shift: [4, 0]
 
-    pad_nfc2:
+    pad_nfc1:
       anchor:
         ref: pad_reset
         shift: [4, 0]
       key:
         tags: [pad_circle, nfc_pad]
-        kcol: NFC2
+        kcol: NFC1
 
-    pad_nfc1:
+    pad_nfc2:
       anchor:
-        ref: pad_nfc2
+        ref: pad_nfc1
         shift: [4, 0]
       key:
         tags: [pad_circle, nfc_pad]
-        kcol: NFC1
+        kcol: NFC2
 
     jst:
       key.tags: [jst]

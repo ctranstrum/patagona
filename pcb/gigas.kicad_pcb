@@ -85,9 +85,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "gigas")
 		)
 	)
 	(footprint "E73:SPDT_C128955"
@@ -4028,7 +4028,7 @@
 			)
 		)
 		(duplicate_pad_numbers_are_jumpers no)
-		(fp_text user "NFC1"
+		(fp_text user "NFC2"
 			(at 0 2 0)
 			(layer "B.SilkS")
 			(uuid "a79087b0-7c38-496f-a73f-d1d5c46bedd9")
@@ -4046,7 +4046,7 @@
 			(drill 0.3)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "NFC1")
+			(net "NFC2")
 			(uuid "d08ff132-068b-4589-84d3-9681e4c78d13")
 		)
 		(pad "1" thru_hole circle
@@ -4055,7 +4055,7 @@
 			(drill 1)
 			(layers "*.Cu" "F.Mask")
 			(remove_unused_layers no)
-			(net "NFC1")
+			(net "NFC2")
 			(uuid "94f2dc97-d1ef-446e-b52b-19ae7392356b")
 		)
 		(pad "1" thru_hole circle
@@ -4064,7 +4064,7 @@
 			(drill 1)
 			(layers "*.Cu" "B.Mask")
 			(remove_unused_layers no)
-			(net "NFC1")
+			(net "NFC2")
 			(uuid "93c01b5c-4111-4395-9687-c9990eb152c9")
 		)
 		(embedded_fonts no)
@@ -4944,7 +4944,7 @@
 			)
 		)
 		(duplicate_pad_numbers_are_jumpers no)
-		(fp_text user "NFC2"
+		(fp_text user "NFC1"
 			(at 0 2 0)
 			(layer "B.SilkS")
 			(uuid "1910efa0-499c-46cc-a64c-17e80b28d94c")
@@ -4962,7 +4962,7 @@
 			(drill 0.3)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "NFC2")
+			(net "NFC1")
 			(uuid "34f2fee1-f1a8-4832-8a2e-50e009d83e58")
 		)
 		(pad "1" thru_hole circle
@@ -4971,7 +4971,7 @@
 			(drill 1)
 			(layers "*.Cu" "F.Mask")
 			(remove_unused_layers no)
-			(net "NFC2")
+			(net "NFC1")
 			(uuid "0fe18cad-83a6-41c1-824c-9572240ed8bd")
 		)
 		(pad "1" thru_hole circle
@@ -4980,7 +4980,7 @@
 			(drill 1)
 			(layers "*.Cu" "B.Mask")
 			(remove_unused_layers no)
-			(net "NFC2")
+			(net "NFC1")
 			(uuid "33c501a2-fffa-4274-8ec3-43bb14b6e00b")
 		)
 		(embedded_fonts no)
@@ -5093,7 +5093,7 @@
 			(at 3.575 0 315)
 			(size 1.35 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "NFC2")
+			(net "NFC1")
 			(uuid "7f5ca348-f475-4bc7-9fc8-e2f030d3d1c6")
 		)
 		(pad "D" smd rect
@@ -7737,7 +7737,7 @@
 			(at -3.275 -5.95 322.5)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "NFC1")
+			(net "NFC2")
 			(uuid "a1cbdf33-3d1f-428e-a8e6-678b37fe8c77")
 		)
 		(pad "2" smd rect
@@ -10841,7 +10841,7 @@
 			(at -3.275 -5.95 37.5)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "NFC1")
+			(net "NFC2")
 			(uuid "785f1ce3-a7bd-45ef-9d60-8cb537bd83d9")
 		)
 		(pad "2" smd rect
@@ -22818,7 +22818,7 @@
 			)
 		)
 	)
-	(gr_text "NFC1-P5"
+	(gr_text "NFC2-P5"
 		(at 116.96087 118.116353 -37.5)
 		(layer "B.SilkS")
 		(uuid "c7019f65-d415-44fc-9155-53a189d94d0c")
@@ -23034,7 +23034,7 @@
 			(justify left mirror)
 		)
 	)
-	(gr_text "NFC2-P6"
+	(gr_text "NFC1-P6"
 		(at 142.37026 117.715046 0)
 		(layer "B.SilkS")
 		(uuid "bd50b64a-909a-4a66-bb3f-c452001158b8")
@@ -23046,7 +23046,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "NFC2-P8"
+	(gr_text "NFC1-P8"
 		(at 144.74526 112.965046 0)
 		(layer "B.SilkS")
 		(uuid "a8f6c58c-21a9-4b61-8133-94481f8f4588")
@@ -23070,7 +23070,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "NFC2-P4"
+	(gr_text "NFC1-P4"
 		(at 151.87026 108.215046 0)
 		(layer "B.SilkS")
 		(uuid "f75a082f-bf66-489d-ad25-e820579949fb")
@@ -23082,7 +23082,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "NFC2-P7"
+	(gr_text "NFC1-P7"
 		(at 151.87026 127.215046 0)
 		(layer "B.SilkS")
 		(uuid "179afdfe-1d77-4f6b-9b38-060cec0ab95a")
@@ -23094,7 +23094,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "NFC2-P5"
+	(gr_text "NFC1-P5"
 		(at 161.37026 117.715046 0)
 		(layer "B.SilkS")
 		(uuid "82047df0-7f6d-442c-955f-84c40e901781")
@@ -23310,7 +23310,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "NFC1-P8"
+	(gr_text "NFC2-P8"
 		(at 177.735422 125.056234 37.5)
 		(layer "B.SilkS")
 		(uuid "d4b6caea-9be4-4dbb-ae17-54725e8353a9")
@@ -25959,7 +25959,7 @@
 		(end 157.9 114.1)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "4760fbc7-7c7f-4e8b-8a75-665ec0ea22f6")
 	)
 	(segment
@@ -25967,7 +25967,7 @@
 		(end 157.9 71.599439)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "b23f1f02-3fc7-45a2-9071-78e11dd8382c")
 	)
 	(via
@@ -25975,7 +25975,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "d8b794c9-117f-4fe5-aa9b-aa2b7951ecd4")
 	)
 	(segment
@@ -25983,7 +25983,7 @@
 		(end 156.903457 115.096543)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "08bad44b-4f61-4ba4-b6e5-d179fc2f7702")
 	)
 	(segment
@@ -25991,7 +25991,7 @@
 		(end 157.9 114.1)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "2dd11a82-7791-4cde-b768-5d38b01b8257")
 	)
 	(segment
@@ -25999,7 +25999,7 @@
 		(end 146.438763 115.096543)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "4d7af691-8cce-4515-9f88-45d624f75e26")
 	)
 	(segment
@@ -26007,7 +26007,7 @@
 		(end 144.150873 117.384433)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "5aa06595-99e2-4478-98de-6949417c899b")
 	)
 	(segment
@@ -26015,7 +26015,7 @@
 		(end 163.205214 114.1)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "7af95c76-9e5a-4f38-9c38-0283b471d09a")
 	)
 	(segment
@@ -26023,7 +26023,7 @@
 		(end 177.964918 121.37182)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "903d4ddb-af0f-4788-acbd-b59f5b46e770")
 	)
 	(segment
@@ -26031,7 +26031,7 @@
 		(end 170.477034 121.37182)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "NFC1")
+		(net "NFC2")
 		(uuid "99e4ee36-2568-4cbf-a3c8-08b827d31bc4")
 	)
 	(segment
@@ -26095,7 +26095,7 @@
 		(end 153.92087 117.341392)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC2")
+		(net "NFC1")
 		(uuid "072c3848-e98a-4a39-8730-d74f47b436fb")
 	)
 	(segment
@@ -26103,7 +26103,7 @@
 		(end 153.92087 117.765656)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC2")
+		(net "NFC1")
 		(uuid "455f74fc-0883-42c6-b527-e67dbebf09f5")
 	)
 	(segment
@@ -26111,7 +26111,7 @@
 		(end 157.013942 72.665413)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC2")
+		(net "NFC1")
 		(uuid "67d0cf3d-f3e4-42fd-bb33-b1951c9d800d")
 	)
 	(segment
@@ -26119,7 +26119,7 @@
 		(end 154.398167 118.242953)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC2")
+		(net "NFC1")
 		(uuid "727440ac-cfa6-40a5-b933-fc88f19cc65a")
 	)
 	(segment
@@ -26127,7 +26127,7 @@
 		(end 149.918228 65.569699)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC2")
+		(net "NFC1")
 		(uuid "a1d33099-facd-4470-94d0-c715eb9256be")
 	)
 	(segment
@@ -26135,7 +26135,7 @@
 		(end 157.013942 114.24832)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "NFC2")
+		(net "NFC1")
 		(uuid "a22c47df-a2a4-4463-a146-d08ff1ee1390")
 	)
 	(segment
