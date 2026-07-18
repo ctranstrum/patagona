@@ -69,6 +69,8 @@ A couple items that you may want to customize:
 - the color of the board; I printed mine in black
 - HASL can be lead-free if you are also using lead-free solder, or you can splurge for ENIG, but it's definitely not required
 
+![chaski pcb render](images/chaski/pcb-render.jpg)
+
 ## Getting the case
 
 If you have access to a 3D printer, the [case][case] is very easy to print yourself.
@@ -108,8 +110,6 @@ So, the order I install:
 ## Step-by-step instructions
 
 Let's get started, shall we?
-
-![chaski pcb render](images/chaski/pcb-render.jpg)
 
 ### Solder the diodes
 
@@ -411,10 +411,10 @@ Attach the keycaps. Again, try to first align the keycap and then use firm even 
 
 ### Attach the bumpons
 
-![bumpons installation](images/chaski/bumpons.jpg)
-
 Once everything else is installed, flip the keyboard back over and press each bumpon into place
 in its designated spot. Your keyboard is now ready for its photoshoot and the installation of firmware.
+
+![bumpons installation](images/chaski/bumpons.jpg)
 
 ## Photoshoot
 

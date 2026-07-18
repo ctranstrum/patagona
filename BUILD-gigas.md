@@ -70,6 +70,8 @@ A couple items that you may want to customize:
 - the color of the board; I printed mine in black
 - HASL can be lead-free if you are also using lead-free solder, or you can splurge for ENIG, but it's definitely not required
 
+![gigas pcb render](images/gigas/pcb-render.jpg)
+
 ## Getting the case
 
 If you have access to a 3D printer, the [case][case] is very easy to print yourself.
@@ -110,8 +112,6 @@ So, the order I install:
 ## Step-by-step instructions
 
 Let's get started, shall we?
-
-![gigas pcb render](images/gigas/pcb-render.jpg)
 
 ### Solder the diodes
 
@@ -369,8 +369,6 @@ The JST connector will extend below the board,
 so it can help to take a couple of books to support each side of the board
 in preparation for the next step.
 
-![board installed in top case](images/gigas/top-case-installed.jpg)
-
 ### Bottom case
 
 Place the bottom of the case upside down in place on the exposed bottom of the board.
@@ -421,6 +419,8 @@ This filament will bring the light from the LED on the XIAO up to the top surfac
 Finally, arrange the battery and wires in place so that the battery cover can close,
 and then insert the five 10mm countersunk screws through the bottom of the case to secure the battery cover.
 
+![board installed in top case](images/gigas/top-case-installed.jpg)
+
 ### Switches and keycaps
 
 Take care when inserting the switches that the pins of each switch are straight.
@@ -442,10 +442,10 @@ Press the joystick cap firmly onto the five-way switch until it snaps into place
 
 ### Attach the bumpons
 
-![bumpons installation](images/gigas/bumpons.jpg)
-
 Once everything else is installed, flip the keyboard back over and press each bumpon into place
 in its designated spot. Your keyboard is now ready for its photoshoot and the installation of firmware.
+
+![bumpons installation](images/gigas/bumpons.jpg)
 
 ## Photoshoot
 

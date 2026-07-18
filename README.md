@@ -32,13 +32,13 @@ That allows for a 6x7 matrix, or up to 42 keys.
 
 ## Patagona gigas
 
-![completed gigas build](images/gigas/complete.jpg)
+![completed Patagona gigas build](images/gigas/complete.jpg)
 
 [Build guide](BUILD-gigas.md)
 
 ## Patagona chaski
 
-![completed chaski build](images/chaski/complete.jpg)
+![completed Patagona chaski build](images/chaski/complete.jpg)
 
 [Build guide](BUILD-chaski.md)
 

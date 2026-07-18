@@ -1,10 +1,19 @@
-# Gigas Cases
+# Patagona Gigas Cases
 
 > A quick note: these files were created through ergogen and can be
 > modified and re-created if any changes are needed, which is great,
 > except that the software is still a little bit buggy, so it doesn't
 > make perfect STL files. Even though these can look a little strange,
 > I have printed all of these files and they came out okay for me.
+
+## Five-way switch cap
+
+The five-way switch at the center of the Patagona gigas requires a cap to be usable.
+The recommended cap is the [joystick style](../joystick.stl),
+which fits snugly over the switch stem and provides a comfortable surface for navigation.
+
+There is also an experimental [dpad style cap](../dpad.stl) available,
+though after trying both, the joystick cap is the preferred option.
 
 ## Keyboard case files
 

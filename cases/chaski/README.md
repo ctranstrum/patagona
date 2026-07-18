@@ -1,4 +1,4 @@
-# Chaski Cases
+# Patagona Chaski Cases
 
 > A quick note: these files were created through ergogen and can be
 > modified and re-created if any changes are needed, which is great,
