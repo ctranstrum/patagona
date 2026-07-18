@@ -511,24 +511,24 @@ An easy way to remember: sliding the power switch toward the USB port turns the 
 while sliding it away from the USB port turns it off.
 
 [battery]: https://ydlbattery.com/products/3-7v-400mah-802525-lithium-polymer-ion-battery
-[bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
-[case]: cases/gigas#readme
+[bumpons]: https://www.amazon.com/HAWORTHS-Bumpers-Self-adhesive-Bumpons-Diameter/dp/B07R17T68B
+[case]: https://github.com/ctranstrum/patagona/tree/main/cases/gigas#readme
 [gigas-gerber]: pcb/gigas.zip
 [chockeycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [chocv1]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
-[chocv2]: https://www.lofree.co/products/hades-low-profile-pom-switches
+[chocv2]: https://www.lofree.co/products/void-low-profile-pom-switches
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [firmware]: https://github.com/ctranstrum/patagona-zmk
 [fiveswitch]: https://www.mouser.com/en/ProductDetail/Alps-Alpine/SKRHADE010?qs=seHrhfPpLDxlAi0Di%252BJD5Q%3D%3D
 [heatset]: https://www.partsbuilt.com/m2-heat-set-thread-insert-3mm-wide-3mm-long-4-pack/
 [heatsettool]: https://pine64.com/product/pinecil-threaded-insert-tips-set-and-adapter/
-[hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
+[hexnuts]: https://monsterbolts.com/products/nuts-din934-a2
 [how-to-solder]: https://www.google.com/search?q=youtube+how+to+solder
 [jlc3dp]: https://jlc3dp.com/
 [jlcpcb]: https://jlcpcb.com/
 [jst]: https://typeractive.xyz/products/battery-jack
 [kester]: https://typeractive.xyz/products/kester-solder-wire-tube
-[mxkeycaps]: https://nuphy.com/collections/keycaps/products/numoji-nsa
+[mxkeycaps]: https://nuphy.com/collections/keycaps?compatibility=low-profile-keys
 [pinecil]: https://typeractive.xyz/products/pinecil
 [power]: https://typeractive.xyz/products/power-switch
 [pts526]: https://www.littelfuse.com/assetdocs/littelfuse-ck-tactile-pts526-series-datasheet?assetguid=bb56c1b4-71ca-4262-9bd7-cf3e3c572bb3
@@ -541,7 +541,7 @@ while sliding it away from the USB port turns it off.
 [splitkb-build-guide]: https://docs.splitkb.com/product-guides/aurora-series/build-guide
 [ts18]: https://www.sameskydevices.com/product/resource/ts18.pdf
 [wire]: https://www.walmart.com/ip/26-Gauge-PVC-Hookup-Wire-1-5m-5ft-26AWG-Flexible-Electrical-Wire-Tinned-Copper-Stranded-6-Color-1-5mm/5487030958
-[xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
+[xiao]: https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html
 [zmk]: https://zmk.dev
 [zmkdocs]: https://zmk.dev/docs
 [zmkrepo]: https://zmk.dev/docs/user-setup
