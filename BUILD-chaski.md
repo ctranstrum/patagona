@@ -79,8 +79,7 @@ If you don't have your own printer, no worries.
 You will probably want to send in your print order around the same time you order the PCB.
 I've used [JLC][jlc3dp] in the past with good results.
 
-Just remember that you should print the top-most piece of the case,
-called "battery cover" in the [case list][case] and needed only for a wireless build,
+Just remember that you should print the battery cover
 in nylon or PLA rather than resin,
 though all other parts of the case can be printed in resin.
 The reason for this is that the design calls for heat-set inserts
@@ -418,7 +417,7 @@ in its designated spot. Your keyboard is now ready for its photoshoot and the in
 
 ## Photoshoot
 
-If you'd like to share your hard work with the rest of the world, take a photo of your new chaski and
+If you'd like to share your hard work with the rest of the world, take a photo of your new Patagona chaski and
 send it to me. My contact information is on my profile. Congratulations on a job well done!
 
 ![completed chaski build](images/chaski/complete.jpg)
