@@ -1,4 +1,4 @@
-# Chaski Cases
+# Gigas Cases
 
 > A quick note: these files were created through ergogen and can be
 > modified and re-created if any changes are needed, which is great,
@@ -17,10 +17,10 @@ you will want to use the full size cases:
 | file                                          | description                                                          |
 | --------------------------------------------- | -------------------------------------------------------------------- |
 | [bottom](bottom_case.stl)                     | installed below the PCB                                              |
+| [top 1+1](top_case_1_1.stl)                   | top case with one thumb key on each hand                             |
+| [top 1+2](top_case_1_2.stl)                   | top case with one thumb key on the left and two on the right         |
+| [top 2+1](top_case_2_1.stl)                   | top case with two thumb keys on the left and one on the right        |
 | [top 2+2](top_case_2_2.stl)                   | top case with two thumb keys on each hand                            |
-| [top 2+3](top_case_2_3.stl)                   | top case with two thumb keys on the left and three on the right      |
-| [top 3+2](top_case_3_2.stl)                   | top case with three thumb keys on the left and two on the right      |
-| [top 3+3](top_case_3_3.stl)                   | top case with three thumb keys on each hand                          |
 | [battery cover](battery_cover.stl)            | above the top plate to cover the battery (do not print in resin)     |
 
 Note that for best results on an FDM printer, the top plate and the battery cover should be printed upside down.
@@ -34,10 +34,10 @@ you can print the 3-part (plus the battery cover) top case:
 | file                                                  | description                                                      |
 | ----------------------------------------------------- | ---------------------------------------------------------------- |
 | [center](top_dovetail.stl)                            | center top case dovetail piece                                   |
+| [left 1](top_dovetail_left_1.stl)                     | left top case piece with one thumb key                           |
 | [left 2](top_dovetail_left_2.stl)                     | left top case piece with two thumb keys                          |
-| [left 3](top_dovetail_left_3.stl)                     | left top case piece with three thumb keys                        |
+| [right 1](top_dovetail_right_1.stl)                   | right top case piece with one thumb key                          |
 | [right 2](top_dovetail_right_2.stl)                   | right top case piece with two thumb keys                         |
-| [right 3](top_dovetail_right_3.stl)                   | right top case piece with three thumb keys                       |
 | [battery cover](battery_cover.stl)                    | above the top plate to cover the battery (do not print in resin) |
 
 Note that for best results on an FDM printer, the top plate and the battery cover should be printed upside down.
@@ -52,10 +52,10 @@ Unlike the sandwich-style cases, it is available only for full-size printer beds
 | file                                                        | description                                                          |
 | ----------------------------------------------------------- | -------------------------------------------------------------------- |
 | [bottom](rectangle_bottom_case.stl)                         | bottom case                                                          |
+| [top 1+1](rectangle_top_case_1_1.stl)                       | top case with one thumb key on each hand                             |
+| [top 1+2](rectangle_top_case_1_2.stl)                       | top case with one thumb key on the left and two on the right         |
+| [top 2+1](rectangle_top_case_2_1.stl)                       | top case with two thumb keys on the left and one on the right        |
 | [top 2+2](rectangle_top_case_2_2.stl)                       | top case with two thumb keys on each hand                            |
-| [top 2+3](rectangle_top_case_2_3.stl)                       | top case with two thumb keys on the left and three on the right      |
-| [top 3+2](rectangle_top_case_3_2.stl)                       | top case with three thumb keys on the left and two on the right      |
-| [top 3+3](rectangle_top_case_3_3.stl)                       | top case with three thumb keys on each hand                          |
 | [battery cover](battery_cover.stl)                          | above the top case to cover the battery (do not print in resin)      |
 
 Note that it is especially important when printing this case style on an FDM printer to place the top case

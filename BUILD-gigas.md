@@ -1,4 +1,4 @@
-# Patagona chaski Build Guide
+# Patagona gigas Build Guide
 
 If this is your first time building a custom keyboard,
 you should do two things before attempting this build.
@@ -9,32 +9,33 @@ you should do two things before attempting this build.
 
 The remainder of this build guide will assume a basic familiarity with the process
 and will only hit upon specific items that may be different or important to note while
-building the Patagona chaski.
+building the Patagona gigas.
 
 ## Bill of materials
 
 | Qty    | Description                                                                                        |
 | ------ | -------------------------------------------------------------------------------------------------- |
-| 1      | Chaski PCB (can be printed by uploading the [zip file][chaski-gerber] to [JLC][jlcpcb])            |
+| 1      | Gigas PCB (can be printed by uploading the [zip file][gigas-gerber] to [JLC][jlcpcb])              |
 | 3      | [3D printed cases][case]                                                                           |
 | 1      | [XIAO BLE][xiao]                                                                                   |
 | 1      | [SMD 5x5x3 tactile switch][reset] for the reset button (similar to [this][pts526] or [this][ts18]) |
 | 1      | [Alps SSSS811101 SPDT slide switch][power] for the battery on/off                                  |
 | 1      | [3.7v 400mAh 802525 LiPo battery][battery] or smaller (max internal space: 8x28x29mm)              |
 | 1      | [JST PH-2 battery jack][jst]                                                                       |
-| 40-42  | SOD-123 [1N4148W SMD diodes][sod123]                                                               |
-| 40-42  | Kailh [choc hot swap sockets][sockets]                                                             |
-| 40-42  | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                          |
-| 40-42  | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                       |
-| 4 (2)  | [M2 x 6mm countersunk screws][screws6mm]                                                           |
-| 4 (2)  | [M2 hex nuts][hexnuts]                                                                             |
-| 5      | [M2 x 10mm countersunk screws][screws10mm]                                                         |
-| 5      | [M2 heat-set inserts 3mm x 3mm][heatset]                                                           |
+| 1      | Alps Alpine [SKRHADE010 five-way switch][fiveswitch]                                               |
+| 30-32  | SOD-123 [1N4148W SMD diodes][sod123]                                                               |
+| 30-32  | Kailh [choc hot swap sockets][sockets]                                                             |
+| 30-32  | [Choc v1][chocv1] or [v2 switches][chocv2] of your choice                                          |
+| 30-32  | [Low profile choc v1][chockeycaps] or [v2 keycaps][mxkeycaps] of your choice                       |
+| 9 (3)  | [M2 x 6mm countersunk screws][screws6mm]                                                           |
+| 9 (3)  | [M2 hex nuts][hexnuts]                                                                             |
+| 3      | [M2 x 10mm countersunk screws][screws10mm]                                                         |
+| 3      | [M2 heat-set inserts 3mm x 3mm][heatset]                                                           |
 | 10 (8) | [6mm x 1.5mm bumpons][bumpons]                                                                     |
 | ~1cm   | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide           |
 | 4      | short (1-2cm) pieces of [26 gauge electrical wire][wire]                                           |
 
-**Note**: When assembling a chaski build in a rectangle case, you will use fewer 6mm screws, hex nuts, and bumpons.
+**Note**: When assembling a gigas build in a rectangle case, you will use fewer 6mm screws, hex nuts, and bumpons.
 The quantities for the rectangle case are given in parentheses.
 
 ## Useful equipment
@@ -57,7 +58,7 @@ You should ideally have access to:
 The PCB can be easily ordered from a circuit board manufacturer with an online store.
 I used [JLC][jlcpcb] because--at least at the time of my order--their prices are unbeatable.
 
-To order, you can simply upload the [gerber zip file][chaski-gerber] to their website,
+To order, you can simply upload the [gerber zip file][gigas-gerber] to their website,
 accept all of the defaults, and wait a week or two for the boards to arrive.
 
 However, the minimum order at JLC is 5 copies, so you'll likely end up
@@ -101,19 +102,20 @@ So, the order I install:
 - xiao
 - reset and battery wire connections to xiao
 
-### Bulky item, assembled on the top of the board, but soldered on the bottom
+### Installed on the top of the board
 
-- jst
+- jst (inserted from the top, soldered from the bottom)
+- five-way switch (the only component installed entirely from the top of the board)
 
 ## Step-by-step instructions
 
 Let's get started, shall we?
 
-![chaski pcb render](images/chaski/pcb-render.jpg)
+![gigas pcb render](images/gigas/pcb-render.jpg)
 
 ### Solder the diodes
 
-![diodes and PCB ready to begin soldering](images/chaski/diodes-start.jpg)
+![diodes and PCB ready to begin soldering](images/gigas/diodes-start.jpg)
 
 Diodes are directional components, and must be soldered in the correct orientation.
 
@@ -127,13 +129,13 @@ All diodes are installed in roughly the same direction on the board, with the li
 
 To easily install a diode, first place a small amount of solder onto one of the diode pads.
 
-![diode with one pad soldered, ready to place](images/chaski/diode-first-pad.jpg)
+![diode with one pad soldered, ready to place](images/gigas/diode-first-pad.jpg)
 
 Then grab the diode with tweezers and orient it correctly.
 Reheat the soldered pad, then slide the diode into place.
 Remove the heat, and when the solder cools, release the diode.
 
-![diode with both legs soldered in place](images/chaski/diode-soldered.jpg)
+![diode with both legs soldered in place](images/gigas/diode-soldered.jpg)
 
 With one leg installed, you can apply solder to the other leg.
 
@@ -142,20 +144,20 @@ correctly and both legs are soldered before moving to the next step.
 
 ### Solder the hotswap sockets
 
-![sockets ready to be soldered to the PCB](images/chaski/sockets-start.jpg)
+![sockets ready to be soldered to the PCB](images/gigas/sockets-start.jpg)
 
 While hotswap sockets will work the same way electrically no matter which way they are installed,
 the tolerances of the case are such that you should take care to install these
 according to the markings on the PCB as well.
 
-In the following picture, the blue box on SW22 shows the silkscreen line before
-a hotswap socket is installed, the green box on SW19 shows a hotswap socket in the
-correct orientation where the silkscreen line is mostly hidden by the straight lines of
-the bottom edge of the socket, and the red box on SW23 shows an incorrectly oriented
+In the following picture, the blue box on SW20 shows the silkscreen line before
+a hotswap socket is installed, the green box on SW22 shows a hotswap socket in the
+correct orientation where the silkscreen line is mostly hidden by the edges of the socket,
+and the red box on SW19 shows an incorrectly oriented
 hotswap socket, where the silkscreen line is clearly visible poking out around the
 angled edges of the socket.
 
-![three sockets showing correct and incorrect orientation](images/chaski/socket-orientation.jpg)
+![three sockets showing correct and incorrect orientation](images/gigas/socket-orientation.jpg)
 
 Place the hotswap socket into the PCB holes,
 being sure that the silkscreen on the PCB matches the orientation of the socket,
@@ -164,19 +166,19 @@ then apply solder to one of the legs.
 This will take a lot more solder than the diode did, but be careful not to get carried away.
 The solder should not overflow the pad or rise above the socket.
 
-![hotswap socket with first leg soldered](images/chaski/socket-first-leg.jpg)
+![hotswap socket with first leg soldered](images/gigas/socket-first-leg.jpg)
 
 Once done, use tweezers to hold the socket in place until the solder cools.
 
 Flip the board around and solder the other pad.
 
-![hotswap socket with both legs soldered](images/chaski/socket-done.jpg)
+![hotswap socket with both legs soldered](images/gigas/socket-done.jpg)
 
 Solder all the sockets on the board.
 
 ### Solder the power switch
 
-![power switch ready to be soldered](images/chaski/power-start.jpg)
+![power switch ready to be soldered](images/gigas/power-start.jpg)
 
 To solder the power switch, first apply a bit of solder to one of the pads.
 
@@ -187,11 +189,11 @@ only after the solder has cooled.
 Once satisfied with the placement, solder each of the other pads, being very careful
 not to allow the solder to connect neighboring pads.
 
-![power switch fully soldered](images/chaski/power-done.jpg)
+![power switch fully soldered](images/gigas/power-done.jpg)
 
 ### Solder the reset switch
 
-![reset switch ready to be soldered](images/chaski/reset-start.jpg)
+![reset switch ready to be soldered](images/gigas/reset-start.jpg)
 
 The reset switch follows the same process,
 though it can require a little more attention to align it correctly.
@@ -200,15 +202,15 @@ Apply solder to one pad,
 use tweezers to slide the reset switch into place while reheating the solder,
 and remove the heat when you are satisfied with the alignment.
 
-![first pad ready to receive the reset switch](images/chaski/reset-one-pad.jpg)
+![first pad ready to receive the reset switch](images/gigas/reset-one-pad.jpg)
 
 Complete the remaining pads.
 
-![reset switch fully soldered](images/chaski/reset-done.jpg)
+![reset switch fully soldered](images/gigas/reset-done.jpg)
 
 ### Solder the xiao
 
-![PCB elevated for installation of the XIAO](images/chaski/xiao-start.jpg)
+![PCB elevated for installation of the XIAO](images/gigas/xiao-start.jpg)
 
 The xiao is installed upside down,
 with the components on top of the xiao extending
@@ -223,7 +225,7 @@ Begin by placing a little solder on one of the corner pads.
 Put the xiao in place, reheat the soldered pad,
 and ensure the correct placement of the xiao before removing the heat.
 
-![xiao with one corner pad soldered](images/chaski/xiao-one-pad.jpg)
+![xiao with one corner pad soldered](images/gigas/xiao-one-pad.jpg)
 
 Once the solder cools and you are satisfied that the xiao is in the correct place,
 solder the opposite corner. It can be a little tricky to get heat on both the
@@ -231,7 +233,9 @@ pad of the PCB as well as the xiao's pad, so take your time, use plenty of heat,
 and wait until you see the solder moving below the xiao and filling a bit of the
 through-hole.
 
-![xiao fully soldered to PCB](images/chaski/xiao-complete.jpg)
+![xiao with opposite corner pad soldered](images/gigas/xiao-opposite-corner.jpg)
+
+![xiao fully soldered to PCB](images/gigas/xiao-done.jpg)
 
 Repeat this process until all the pads of the xiao are soldered well to the board.
 I also usually re-solder the first pad I did,
@@ -280,14 +284,37 @@ Install NFC2 first, then NFC1.
 Unlike all components so far,
 the JST connector needs to be inserted into place from the opposite side of the board.
 
-![jst ready to be inserted on front of PCB](images/chaski/jst-start.jpg)
+![JST connector location on the front of the PCB](images/gigas/jst-location.jpg)
 
 Once in place, secure it temporarily with a little tape
 while you solder the legs on the other side of the board.
 
+![JST legs poking through the back of the PCB](images/gigas/jst-legs.jpg)
+
+![JST legs fully soldered on the back of the PCB](images/gigas/jst-soldered.jpg)
+
 Remove the tape when done.
 
-![jst legs soldered on back of PCB](images/chaski/jst-soldered.jpg)
+![completed JST connector on the front of the board](images/gigas/jst-done.jpg)
+
+### Solder the five-way switch
+
+The five-way switch is the only component soldered entirely from the front of the board.
+It has guide bosses on its underside that insert into corresponding holes in the PCB,
+which keeps it properly aligned while you solder.
+
+![five-way switch ready to be soldered](images/gigas/skrh-location.jpg)
+
+Begin by inserting the guide bosses into the holes in the PCB.
+Then solder the two large ground pads on either side of the switch first.
+These will hold the switch firmly in place and prevent it from shifting
+while you complete the finer work.
+
+![five-way switch ground pads soldered](images/gigas/skrh-gnd-soldered.jpg)
+
+Once the switch is secure, solder the remaining six smaller pads around the edges of the switch.
+
+![five-way switch fully soldered](images/gigas/skrh-done.jpg)
 
 ### Clean the board
 
@@ -297,9 +324,9 @@ Use isopropyl alcohol and an old toothbrush to clean the extra flux from the boa
 
 Take a moment and admire your work.
 
-![soldered board, back view](images/chaski/soldered-back.jpg)
+![soldered board, back view](images/gigas/soldered-back.jpg)
 
-![soldered board, front view](images/chaski/soldered-front.jpg)
+![soldered board, front view](images/gigas/soldered-front.jpg)
 
 ## Install the case
 
@@ -308,7 +335,7 @@ Take a moment and admire your work.
 While you can use your regular soldering tip for installing the heat-set inserts,
 it is easier to get better results using a heat-set tip.
 
-![heat-set inserts ready to be installed](images/chaski/heat-set-start.jpg)
+![heat-set inserts ready to be installed](images/gigas/heat-set-start.jpg)
 
 Place the heat-set insert above the hole, ensuring that the smaller side is down.
 It can be a bit hard to see the different widths of each end,
@@ -325,7 +352,7 @@ Don't push it below the surface of the plastic.
 
 Repeat for the other four heat-set inserts.
 
-![heat-set insert installed flush with battery cover surface](images/chaski/heat-set-done.jpg)
+![heat-set insert installed flush with battery cover surface](images/gigas/heat-set-done.jpg)
 
 ### Top plate
 
@@ -333,7 +360,7 @@ Set the top plate upside down and insert the hex nuts into place in the case.
 Note that there are 4 hex nuts used for the standard case,
 and only 2 if you are using the rectangle case.
 
-![a hex nut inserted into place in the top case](images/chaski/hex-nuts.jpg)
+![a hex nut inserted into place in the top case](images/gigas/hex-nuts.jpg)
 
 Carefully lift the top plate from the table,
 and while holding it upside down so that the hex nuts do not fall,
@@ -341,6 +368,8 @@ insert the completed board into place.
 The JST connector will extend below the board,
 so it can help to take a couple of books to support each side of the board
 in preparation for the next step.
+
+![board installed in top case](images/gigas/top-case-installed.jpg)
 
 ### Bottom case
 
@@ -350,21 +379,21 @@ Insert and secure the 6mm countersunk screws on the left and right sides of the 
 
 Leave the 5 center screw holes empty for now.
 
-![one screw installed in the bottom case](images/chaski/bottom-screw.jpg)
+![one screw installed in the bottom case](images/gigas/bottom-screw.jpg)
 
 ### Battery
 
 Insert the battery JST cable into the JST connector,
 carefully observing the polarity of the wires.
 
-![red and black battery wires should align with positive and negative connections on the jst terminal](images/chaski/jst-alignment.jpg)
+![red and black battery wires should align with positive and negative connections on the jst terminal](images/gigas/jst-alignment.jpg)
 
 The red wire should always connect to the + symbol on the board,
 and the black wire to the - symbol.
 If your battery cable is wired incorrectly, stop now and replace
 the wire or buy a different battery.
 
-![battery connected to jst](images/chaski/jst-connected.jpg)
+![battery connected to jst](images/gigas/jst-connected.jpg)
 
 ### LED light guide
 
@@ -375,26 +404,22 @@ so you may need to slightly enlarge the hole,
 or if the hole is too loose,
 you may need to apply a small amount of glue when installation is complete.
 
-![filament cut to approximate size](images/chaski/light-guide-start.jpg)
-
 Test the length of the filament by inserting it through the battery cover and
 into its place in the top case.
 I like to do this before the battery cover is installed so that I can more easily
 work with the filament and the holes as needed.
 
-![filament inserted into place](images/chaski/light-guide-inserted.jpg)
+![filament inserted into place](images/gigas/light-guide-inserted.jpg)
 
 Ensure that the filament is flush or slightly protrudes maybe half a millimeter when fully inserted.
 This filament will bring the light from the LED on the XIAO up to the top surface of the case.
 
-![filament flush with top of case](images/chaski/light-guide-done.jpg)
+![LED light visible through filament light guide](images/gigas/light-guide-active.jpg)
 
 ### Battery cover
 
 Finally, arrange the battery and wires in place so that the battery cover can close,
 and then insert the five 10mm countersunk screws through the bottom of the case to secure the battery cover.
-
-![installing the 10mm screws](images/chaski/10mm-screw-installation.jpg)
 
 ### Switches and keycaps
 
@@ -403,25 +428,31 @@ Gently place the switch in place, and position it so it is aligned before pushin
 straight down. Do not try to assemble it at an angle. It may take a bit of force to get the
 switch fully seated. There should be no gap between the skirt of the switch and the top plate.
 
-![installing the switches](images/chaski/switches.jpg)
+![installing the switches](images/gigas/switches.jpg)
 
 Attach the keycaps. Again, try to first align the keycap and then use firm even pressure.
 
-![installing the keycaps](images/chaski/keycaps.jpg)
+![installing the keycaps](images/gigas/keycaps.jpg)
+
+### Joystick cap
+
+Press the joystick cap firmly onto the five-way switch until it snaps into place.
+
+![joystick cap installed on five-way switch](images/gigas/joystick-cap.jpeg)
 
 ### Attach the bumpons
 
-![bumpons installation](images/chaski/bumpons.jpg)
+![bumpons installation](images/gigas/bumpons.jpg)
 
 Once everything else is installed, flip the keyboard back over and press each bumpon into place
 in its designated spot. Your keyboard is now ready for its photoshoot and the installation of firmware.
 
 ## Photoshoot
 
-If you'd like to share your hard work with the rest of the world, take a photo of your new chaski and
+If you'd like to share your hard work with the rest of the world, take a photo of your new gigas and
 send it to me. My contact information is on my profile. Congratulations on a job well done!
 
-![completed chaski build](images/chaski/complete.jpg)
+![completed gigas build](images/gigas/complete.jpg)
 
 ## Firmware installation
 
@@ -432,7 +463,7 @@ double-tap the reset button on the bottom of the board,
 and then drag the appropriate firmware
 to the new device that appears as a thumb drive on the computer's file manager.
 
-![drag and drop to install](images/chaski/drag-and-drop-firmware.jpg)
+![drag and drop to install](images/gigas/drag-and-drop-firmware.jpg)
 
 Note, however, that the "thumb drive" is not actually a real thumb drive, and normal copy and paste operations
 do not work as they do on a real thumb drive. Copying the file to the keyboard is really a command to the
@@ -482,13 +513,14 @@ while sliding it away from the USB port turns it off.
 
 [battery]: https://ydlbattery.com/products/3-7v-400mah-802525-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
-[case]: cases/chaski#readme
-[chaski-gerber]: pcb/chaski.zip
+[case]: cases/gigas#readme
+[gigas-gerber]: pcb/gigas.zip
 [chockeycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [chocv1]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
 [chocv2]: https://www.lofree.co/products/hades-low-profile-pom-switches
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [firmware]: https://github.com/ctranstrum/patagona-zmk
+[fiveswitch]: https://www.mouser.com/en/ProductDetail/Alps-Alpine/SKRHADE010?qs=seHrhfPpLDxlAi0Di%252BJD5Q%3D%3D
 [heatset]: https://www.partsbuilt.com/m2-heat-set-thread-insert-3mm-wide-3mm-long-4-pack/
 [heatsettool]: https://pine64.com/product/pinecil-threaded-insert-tips-set-and-adapter/
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
