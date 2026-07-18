@@ -329,10 +329,10 @@ path.combo {
 <text x="0" y="24" class="key hold layer-activator">numpad</text>
 </a></g>
 <g class="combo combopos-0">
-<path d="M396,-40 h-322 a6.0,6.0 0 0 0 -6.0,6.0 v50" class="combo"/>
-<path d="M396,-40 h322 a6.0,6.0 0 0 1 6.0,6.0 v50" class="combo"/>
-<rect rx="6" ry="6" x="382" y="-53" width="28" height="26" class="combo"/>
-<text x="396" y="-40" class="combo tap">
+<path d="M396,-25 h-322 a6.0,6.0 0 0 0 -6.0,6.0 v35" class="combo"/>
+<path d="M396,-25 h322 a6.0,6.0 0 0 1 6.0,6.0 v35" class="combo"/>
+<rect rx="6" ry="6" x="382" y="-38" width="28" height="26" class="combo"/>
+<text x="396" y="-25" class="combo tap">
 <tspan x="396" dy="-0.6em">ZMK</tspan><tspan x="396" dy="1.2em">Studio</tspan>
 </text>
 </g>
