@@ -21,7 +21,7 @@ within reach of either thumb for scroll, navigation, or mouse control.
 
 ![completed Patagona gigas build](images/gigas/complete.jpg)
 
-[Build guide](BUILD-gigas.md) · [Cases](cases/gigas#readme) · [Firmware][firmware]
+[Build guide](BUILD-gigas.md) · [Printable case files](cases/gigas#readme) · [Firmware][firmware]
 
 ![default Patagona gigas keymap](images/gigas/keymap.svg)
 
@@ -31,19 +31,20 @@ within reach of either thumb for scroll, navigation, or mouse control.
 
 ![completed Patagona chaski build](images/chaski/complete.jpg)
 
-[Build guide](BUILD-chaski.md) · [Cases](cases/chaski#readme) · [Firmware][firmware]
+[Build guide](BUILD-chaski.md) · [Printable case files](cases/chaski#readme) · [Firmware][firmware]
 
 ![default Patagona chaski keymap](images/chaski/keymap.svg)
 
 ## Heritage
 
 The [Patagona genus][patagona-wiki] is home to the two largest hummingbirds in the world.
-*P. gigas* is the migratory giant, ascending over 4,000 meters and traveling more than
+_P. gigas_ is the migratory giant, ascending over 4,000 meters and traveling more than
 4,000 km each way between the Chilean coast and the Peruvian Andes each year.
-*P. chaski* is its slightly larger but sedentary cousin.
+_P. chaski_ is its slightly larger but sedentary cousin.
 
-These keyboards follow the [Hummingbird layout][pje66] introduced by PJE66.
-The original used a XIAO SAMD21 and topped out at 30 keys.
+These keyboards follow in the tradition of the original [Hummingbird design][pje66],
+which used a XIAO SAMD21 and topped out at 30 keys
+due to the maximum size of the 5x6 matrix allowed by the 11 pins on that board.
 The Patagona boards use the XIAO BLE, whose NFC pads can be repurposed as GPIO —
 adding two extra pins, enabling a 6×7 matrix and up to 42 keys.
 
