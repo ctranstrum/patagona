@@ -1,32 +1,10 @@
-# Patagona Keyboards
+![Patagona gigas PCB](images/gigas/pcb-render.jpg)
 
-![completed Patagona gigas build](images/gigas/complete.jpg)
+# Patagona Keyboards
 
 Compact wireless ergo keyboards built around the [XIAO BLE][xiao] microcontroller
 and running [ZMK][zmk] firmware with full [ZMK Studio][studio] support.
 Named after the two species of giant hummingbird — the largest hummingbirds in the world.
-
-## Patagona gigas
-
-30–32 keys with a five-way joystick switch at the center,
-within reach of either thumb for scroll, navigation, or mouse control.
-
-![Patagona gigas PCB](images/gigas/pcb-render.jpg)
-
-[Build guide](BUILD-gigas.md) · [Cases](cases/gigas#readme) · [Firmware][firmware]
-
-![default Patagona gigas keymap](images/gigas/keymap.svg)
-
-## Patagona chaski
-
-40–42 keys for those who want every punctuation mark and modifier key
-without reaching for a layer.
-
-![completed Patagona chaski build](images/chaski/complete.jpg)
-
-[Build guide](BUILD-chaski.md) · [Cases](cases/chaski#readme) · [Firmware][firmware]
-
-![default Patagona chaski keymap](images/chaski/keymap.svg)
 
 ## Features
 
@@ -36,7 +14,28 @@ without reaching for a layer.
 - **3D-printed case** — printable at home on any FDM printer, with split versions for smaller beds
 - **Open hardware** — all source files included, licensed under [CERN-OHL-S-2.0][ohl]
 
-## Background
+## Patagona gigas
+
+30–32 keys with a five-way joystick switch at the center,
+within reach of either thumb for scroll, navigation, or mouse control.
+
+![completed Patagona gigas build](images/gigas/complete.jpg)
+
+[Build guide](BUILD-gigas.md) · [Cases](cases/gigas#readme) · [Firmware][firmware]
+
+![default Patagona gigas keymap](images/gigas/keymap.svg)
+
+## Patagona chaski
+
+40–42 keys for those who want the 3x6 layout and more thumb keys.
+
+![completed Patagona chaski build](images/chaski/complete.jpg)
+
+[Build guide](BUILD-chaski.md) · [Cases](cases/chaski#readme) · [Firmware][firmware]
+
+![default Patagona chaski keymap](images/chaski/keymap.svg)
+
+## Heritage
 
 The [Patagona genus][patagona-wiki] is home to the two largest hummingbirds in the world.
 *P. gigas* is the migratory giant, ascending over 4,000 meters and traveling more than
