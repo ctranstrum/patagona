@@ -1,4 +1,4 @@
-<svg width="740" height="386" viewBox="0 0 740 386" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="740" height="323" viewBox="0 0 740 323" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>/* inherit to force styles through use tags */
 svg path {
     fill: inherit;
@@ -125,8 +125,7 @@ path.combo {
 /* End Tabler Icons Cleanup */
 </style>
 <g transform="translate(30, 0)" class="layer-Colemak">
-<text x="0" y="28" class="label" id="Colemak">Colemak:</text>
-<g transform="translate(0, 63)">
+<g transform="translate(0, 0)">
 <g transform="translate(63, 63) rotate(15.0)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Q</text>
@@ -304,20 +303,20 @@ path.combo {
 <g transform="translate(384, 285) rotate(-37.5)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">␣</text>
-<a href="#symbols">
-<text x="0" y="24" class="key hold layer-activator">symbols</text>
+<a href="#sym-nav">
+<text x="0" y="24" class="key hold layer-activator">sym-nav</text>
 </a></g>
 <g transform="translate(428, 251) rotate(-37.5)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">*</text>
-<a href="#symbols">
-<text x="0" y="24" class="key hold layer-activator">symbols</text>
+<a href="#sym-num">
+<text x="0" y="24" class="key hold layer-activator">sym-num</text>
 </a></g>
 <g class="combo combopos-0">
-<path d="M333,6 h-264 a6.0,6.0 0 0 0 -6.0,6.0 v32" class="combo"/>
-<path d="M333,6 h264 a6.0,6.0 0 0 1 6.0,6.0 v32" class="combo"/>
-<rect rx="6" ry="6" x="319" y="-7" width="28" height="26" class="combo"/>
-<text x="333" y="6" class="combo tap">
+<path d="M333,-4 h-264 a6.0,6.0 0 0 0 -6.0,6.0 v42" class="combo"/>
+<path d="M333,-4 h264 a6.0,6.0 0 0 1 6.0,6.0 v42" class="combo"/>
+<rect rx="6" ry="6" x="319" y="-17" width="28" height="26" class="combo"/>
+<text x="333" y="-4" class="combo tap">
 <tspan x="333" dy="-0.6em">ZMK</tspan><tspan x="333" dy="1.2em">Studio</tspan>
 </text>
 </g>
