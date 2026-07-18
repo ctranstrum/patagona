@@ -1912,7 +1912,7 @@ cases:
       operation: subtract
 
   # Remove the underscore to print out the mock PCB if you want to check for fit
-  mock_pcb:
+  _mock_pcb:
     - what: outline
       name: pcb_outline
       extrude: 1.6

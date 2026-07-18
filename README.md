@@ -27,12 +27,16 @@ by the 11 accessible GPIO pins on that microcontroller.
 
 The Patagona keyboards use the [XIAO BLE][ble],
 which has two NFC pads that can be repurposed,
-providing 13 GPIO pins.
+providing for a total of 13 GPIO pins when added to the standard 11.
 That allows for a 6x7 matrix, or up to 42 keys.
 
 ## Patagona gigas
 
 ## Patagona chaski
+
+![completed chaski build](images/chaski/complete.jpg)
+
+[Build guide](BUILD-chaski.md)
 
 [pje66]: https://github.com/PJE66/hummingbird
 [samd21]: https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html
