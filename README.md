@@ -12,7 +12,7 @@ Named after the two species of giant hummingbird — the largest hummingbirds in
 - **Live remapping** — ZMK Studio lets you customize your keymap over USB without recompiling firmware
 - **Hotswap** — Kailh Choc sockets support both v1 and v2 switches; swap anytime
 - **3D-printed case** — printable at home on any FDM printer, with split versions for smaller beds
-- **Open hardware** — all source files included, licensed under [CERN-OHL-S-2.0][ohl]
+- **Open hardware** — all source files included, licensed under [CERN-OHL-P-2.0][ohl]
 
 ## Patagona gigas
 
@@ -21,7 +21,7 @@ within reach of either thumb for scroll, navigation, or mouse control.
 
 ![completed Patagona gigas build](images/gigas/complete.jpg)
 
-[Build guide](BUILD-gigas.md) · [Printable case files](cases/gigas#readme) · [Firmware][firmware]
+[Build guide](BUILD-gigas.md) · [Printable case files][case-gigas] · [Firmware][firmware]
 
 ![default Patagona gigas keymap](images/gigas/keymap.svg)
 
@@ -31,7 +31,7 @@ within reach of either thumb for scroll, navigation, or mouse control.
 
 ![completed Patagona chaski build](images/chaski/complete.jpg)
 
-[Build guide](BUILD-chaski.md) · [Printable case files](cases/chaski#readme) · [Firmware][firmware]
+[Build guide](BUILD-chaski.md) · [Printable case files][case-chaski] · [Firmware][firmware]
 
 ![default Patagona chaski keymap](images/chaski/keymap.svg)
 
@@ -44,10 +44,12 @@ _P. chaski_ is its slightly larger but sedentary cousin.
 
 These keyboards follow in the tradition of the original [Hummingbird design][pje66],
 which used a XIAO SAMD21 and topped out at 30 keys
-due to the maximum size of the 5x6 matrix allowed by the 11 pins on that board.
+due to the maximum capacity of the 5×6 matrix allowed by the 11 pins on that board.
 The Patagona boards use the XIAO BLE, whose NFC pads can be repurposed as GPIO —
 adding two extra pins, enabling a 6×7 matrix and up to 42 keys.
 
+[case-gigas]: https://github.com/ctranstrum/patagona/tree/main/cases/gigas#readme
+[case-chaski]: https://github.com/ctranstrum/patagona/tree/main/cases/chaski#readme
 [firmware]: https://github.com/ctranstrum/patagona-zmk
 [ohl]: LICENSE.txt
 [patagona-wiki]: https://en.wikipedia.org/wiki/Giant_hummingbird
