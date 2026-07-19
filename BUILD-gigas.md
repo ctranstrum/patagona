@@ -356,8 +356,8 @@ Repeat for the other four heat-set inserts.
 ### Top plate
 
 Set the top plate upside down and insert the hex nuts into place in the case.
-Note that there are 4 hex nuts used for the standard case,
-and only 2 if you are using the rectangle case.
+Note that there are 9 hex nuts used for the standard case,
+and only 3 if you are using the rectangle case.
 
 ![a hex nut inserted into place in the top case](images/gigas/hex-nuts.jpg)
 
@@ -372,9 +372,9 @@ in preparation for the next step.
 
 Place the bottom of the case upside down in place on the exposed bottom of the board.
 Insert and secure the 6mm countersunk screws on the left and right sides of the case:
-4 screws for the standard case, or 2 if using the rectangle case.
+9 screws for the standard case, or 3 if using the rectangle case.
 
-Leave the 5 center screw holes empty for now.
+Leave the 3 center screw holes empty for now.
 
 ![one screw installed in the bottom case](images/gigas/bottom-screw.jpg)
 
@@ -416,7 +416,7 @@ This filament will bring the light from the LED on the XIAO up to the top surfac
 ### Battery cover
 
 Finally, arrange the battery and wires in place so that the battery cover can close,
-and then insert the five 10mm countersunk screws through the bottom of the case to secure the battery cover.
+and then insert the three 10mm countersunk screws through the bottom of the case to secure the battery cover.
 
 ![board installed in top case](images/gigas/top-case-installed.jpg)
 
