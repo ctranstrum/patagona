@@ -499,7 +499,7 @@ which means that the switch connects P0 to P5.
 To test that switch, simply short those two pins together.
 
 If you need to correct any soldering,
-access to the bottom of the PCB involves removing all 9 screws from the bottom of the case.
+access to the bottom of the PCB involves removing all 12 screws from the bottom of the case.
 You do not necessarily need to remove all the switches.
 However, if you are doing extensive re-soldering work,
 it may be a good idea to fully remove the PCB from the case.
