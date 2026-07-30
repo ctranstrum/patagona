@@ -32,6 +32,10 @@ Print the following pieces:
 - the battery cover
 - the joystick knob
 
+You can use the
+[printer profile on makerworld](https://makerworld.com/en/models/3112971-patagona-gigas-keyboard-case#profileId-3510506)
+or download the individual STL files:
+
 | file                               | description                                                      |
 | ---------------------------------- | ---------------------------------------------------------------- |
 | [bottom](bottom_case.stl)          | installed below the PCB                                          |
@@ -60,6 +64,10 @@ Print the following pieces:
 - your choice of one of the two top cases for the right hand
 - the battery cover
 - the joystick knob
+
+You can use the
+[printer profile on makerworld](https://makerworld.com/en/models/3112971-patagona-gigas-keyboard-case#profileId-3510558)
+or download the individual STL files:
 
 | file                                      | description                                                      |
 | ----------------------------------------- | ---------------------------------------------------------------- |
@@ -91,6 +99,10 @@ Print the following pieces:
 - the battery cover
 - the joystick knob
 
+You can use the
+[printer profile on makerworld](https://makerworld.com/en/models/3112971-patagona-gigas-keyboard-case#profileId-3510571)
+or download the individual STL files:
+
 | file                                  | description                                                     |
 | ------------------------------------- | --------------------------------------------------------------- |
 | [bottom](rectangle_bottom_case.stl)   | bottom case                                                     |
@@ -106,6 +118,9 @@ upside down in the slicer so that the top surface of the case is in direct conta
 Otherwise you are going to have a real struggle with support removal.
 
 ## Print quality hints
+
+For best results, use the
+[printer profile on makerworld](https://makerworld.com/en/models/3112971-patagona-gigas-keyboard-case).
 
 When printing this case,
 it should be noted that the battery cover is designed
