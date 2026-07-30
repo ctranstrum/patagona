@@ -121,6 +121,8 @@ Otherwise you are going to have a real struggle with support removal.
 
 For best results, use the
 [printer profile on makerworld](https://makerworld.com/en/models/3112971-patagona-gigas-keyboard-case).
+It has been optimized with the top pieces already placed upside down on the print bed
+as well as having the layer height set to 0.1mm to ensure the best fit for the keyswitches.
 
 When printing this case,
 it should be noted that the battery cover is designed
