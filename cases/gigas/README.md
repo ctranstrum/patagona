@@ -21,7 +21,7 @@ though after trying both, the joystick cap is the preferred option.
 
 If you have access to your own 3D printer with a large print bed
 or if you are sending the files away to be printed,
-you will want to use the full size cases:
+you will want to use the full size cases.
 
 Print the following pieces:
 
@@ -46,13 +46,13 @@ Note that for best results on an FDM printer, the top plate and the battery cove
 
 ### Mini printer
 
-![mini printer case](../../images/gigas/mini-case.jpg)
-
 If you have access to your own 3D printer
 but it has a print bed too small for the full-size case,
-you can print the case using the following files:
+you can print the case using these files.
 
 Print the following pieces:
+
+![mini printer case](../../images/gigas/mini-case.jpg)
 
 - the left and right bottom case
 - the center top case
@@ -77,14 +77,14 @@ Note that for best results on an FDM printer, the top plate and the battery cove
 
 ### Rectangular snap-fit case
 
-![rectangle case](../../images/gigas/rectangle-case.jpg)
-
 I've also created an alternative case that uses fewer screws and instead relies on a snap-fit design
 to remain securely fastened without sacrificing any additional height compared to the original sandwich design.
 
 Unlike the sandwich-style cases, it is available only for full-size printer beds.
 
 Print the following pieces:
+
+![rectangle case](../../images/gigas/rectangle-case.jpg)
 
 - the bottom case
 - your choice of one of the four top cases
