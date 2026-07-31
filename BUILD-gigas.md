@@ -364,7 +364,7 @@ and only 3 if you are using the rectangle case.
 Carefully lift the top plate from the table,
 and while holding it upside down so that the hex nuts do not fall,
 insert the completed board into place.
-The JST connector will extend below the board,
+The five-way switch and the JST connector will extend below the board,
 so it can help to take a couple of books to support each side of the board
 in preparation for the next step.
 
